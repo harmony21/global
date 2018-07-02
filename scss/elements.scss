@@ -1,0 +1,1262 @@
+//resolutions
+$desktop: 1920px;
+$laptop: 1366px;
+$tablets: 1030px; 
+$min-tablets: 778px;
+$phones: 550px;
+$min-phones: 350px;
+
+//config
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+@mixin min-tablets {
+    @media screen and (max-width: $min-tablets) {
+        @content;
+    }
+}
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+@mixin min-phones {
+    @media screen and (max-width: $min-phones) {
+        @content;
+    }
+}
+//стили строчных элементов
+p, ul, h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.child {
+    color: black;
+}
+/* Главная секция */
+.header {
+    &__top {
+        .address {
+            font-size: 14px;
+            color: white;
+            @media screen and (max-width: 410px) {
+                font-size: 9px;
+            }
+        }
+        .phone {
+            font-size: 18px;
+            @media screen and (max-width: 410px) {
+                font-size: 12px;
+            }
+        }
+        .lk {
+           font-size: 12px; 
+           @include min-tablets {
+                font-size: 13px;
+            }
+            @media screen and (max-width: 410px) {
+                font-size: 10px;
+            }
+        }
+        .childs {
+            font-size: 14px;
+            @media screen and (max-width: 410px) {
+                font-size: 10px;
+            }
+        }
+    }
+}
+.btn {
+    &__link {
+        font-size: 16px;
+        @include phones {
+            font-size: 12px;
+        }
+        @include min-phones {
+            font-size: 10px;
+        }
+    }
+    &--header {
+        .btn__link--order {
+            font-size: 16px;
+            background: #7b3a8e;
+            @include phones {
+                font-size: 12px;
+            }
+            @include min-phones {
+                font-size: 10px;
+            }
+            &:hover {
+                background-color: darken(#7b3a8e, 5);
+            }
+        }
+    }
+}
+.mobile-menu {
+    &__list {
+        @include tablets {
+            font-size: 18px;
+        }
+        @include min-phones {
+            font-size: 14px;
+        }
+    }
+    .order {
+        @include tablets {
+            font-size: 18px;
+        }
+        @include min-phones {
+            font-size: 14px;
+        }
+        &:hover {
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+    }
+}
+.slide {
+    &__title {
+        font-size: 60px;
+        @media screen and (max-width: 880px) {
+            font-size: 50px;
+        }
+        @include min-tablets {
+            font-size: 35px;
+        }
+        @include phones {
+            font-size: 24px;
+        }
+        @include min-phones {
+            font-size: 16px;
+        }
+    }
+    &__text {
+        font-size: 24px;
+        @include min-tablets {
+            font-size: 20px;
+        }
+        @include min-phones {
+            font-size: 11px;
+        }
+    }
+}
+.menu {
+    &.child {
+        a {
+            color: black;
+        }
+    }
+}
+/* Знакомство с Global */
+.meeting {
+    &__desc {
+        font-size: 18px;
+    }
+}
+/* Заголовок секции */
+.block-title {
+    font-size: 30px;
+    @media screen and (max-width: 720px) {
+        font-size: 24px;
+    }
+    @include phones {
+        font-size: 16px;
+        color: #2d0b37;
+    }
+    @include min-phones {
+        font-size: 14px;
+    }
+    span {
+        color: #7b3a8e;
+    }
+}
+/* Популярные тренировки */
+.training {
+    &__link {
+        font-size: 20px;
+        @include laptop {
+            font-size: 18px;
+        }
+        @media screen and (max-width: 1220px) {
+            font-size: 14px;
+        }
+        @include tablets {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 610px) {
+            font-size: 10px;
+        }
+        @include phones {
+            font-size: 9px;
+            color: #7b3a8e;
+        }
+    }
+}
+.link {
+    font-size: 20px;
+    color: black;
+    @media screen and (max-width: 720px) {
+        font-size: 16px;
+    }
+    @include phones {
+        color: #2d0b37;
+        font-size: 12px;
+    }
+    @include min-phones {
+        font-size: 10px;
+    }
+}
+/* Календарь мероприятий */
+.calendar {
+    &__wrap {
+        .block-title, .link {
+            color: white;
+        }
+        .block-title {
+            @media screen and (max-width: 900px) {
+                font-size: 24px;
+            }
+            @include phones {
+                font-size: 18px;
+            }
+            @include min-phones {
+                font-size: 12px;
+            }
+        }
+        .link {
+            @include tablets {
+                font-size: 14px;
+            }
+            @include phones {
+                font-size: 12px;
+            }
+            @include min-phones {
+                font-size: 10px;
+            } 
+        }
+    }
+    .block-title {
+        color: white;
+    }
+    &__days {
+        li {
+            &.current {
+                a {
+                    background-color: #7b3a8e;
+                }
+            }
+        }
+    }
+    .measure {
+        .block-title {
+            span {
+                color: white;
+            }
+            @include phones {
+                span:first-child {
+                    color: white;
+                    font-size: 20px;
+                    background-color: #7b398d;
+                }
+            }
+        }
+        &__info {
+            color: white;
+        }
+        &__title {
+            font-size: 24px;
+            @include phones {
+                font-size: 18px;
+            }
+            @include min-phones {
+                font-size: 14px;
+                font-family: Circe-Bold;
+            }
+        }
+        &__desc {
+            @include tablets {
+                font-size: 14px;
+            }
+            @include min-phones {
+                font-size: 10px;
+            }
+        }
+        .link {
+            color: white;
+            @include tablets {
+                font-size: 14px;
+            }
+        }
+    }
+}
+/* Новости */
+.news {
+    &__desc {
+        .date {
+            color: #888888;
+            font-size: 12px;
+        }
+        .number {
+            font-size: 24px;
+            font-family: Circe-Bold;
+            color: white;
+            background-color: #7b398d;
+        }
+        .link {
+            @include tablets {
+                font-size: 14px;
+            }
+        }
+    }
+    &__title {
+       font-size: 24px; 
+       color: #2d0b37;
+       @include tablets {
+            font-size: 20px;
+        }
+        @include min-tablets {
+            font-size: 14px;
+        }
+    }
+    &__text {
+        font-size: 16px;
+        color: #2d0b37;
+        @include tablets {
+            font-size: 14px;
+        }
+        @include min-tablets {
+            font-size: 12px;
+        }
+    }
+    &__list {
+        .link {
+           @include tablets {
+                font-size: 14px;
+            }
+            @include phones {
+                font-size: 12px;
+            } 
+        }
+    }
+    &__item {
+        &:hover {
+            .news__link {
+                color: #7b3a8e;
+            }
+        }
+        p {
+            font-size: 12px;
+            color: #888888;
+            @media screen and (max-width: 960px) {
+                font-size: 10px;
+            }
+        }
+        .news__link {
+            font-size: 16px;
+            color: black;
+            @include tablets {
+                font-size: 14px;
+            }
+            @media screen and (max-width: 960px) {
+                font-size: 11px;
+            }
+            @include min-tablets {
+                font-size: 10px;
+            }
+            @include phones {
+                color: #7b3a8e;
+                font-size: 14px;
+            }
+        }
+    }
+}
+/* Instagram */
+.instagram {
+    &__name {
+        span {
+            font-size: 24px;
+        }
+        .follow {
+            color: #2d0b37;
+            font-size: 16px;
+            &:hover {
+                color: white;
+                background-color: #7b3a8e;
+            }
+        }
+    }
+}
+/* Вместе с Global */
+.together {
+    &__title {
+        font-size: 72px;
+        color: white;
+        @include min-tablets {
+            font-size: 50px;
+        }
+        @include phones {
+            font-size: 30px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
+    }
+    .price__link {
+        font-size: 16px;
+        @include min-phones {
+            font-size: 9px;
+        }
+    } 
+    .footer {
+        &__top {
+            .info {
+                &__contacts {
+                    font-size: 18px;
+                    color: white;
+                    @media screen and (max-width: 610px) {
+                        font-size: 14px;
+                    }
+                    @include phones {
+                        font-size: 12px;
+                    }
+                    @include min-phones {
+                        font-size: 9px;
+                    }
+                }
+            }
+        }
+        &__bottom {
+            .copyright {
+                font-size: 14px;
+                color: #958b96;
+                @media screen and (max-width: 610px) {
+                    font-size: 12px;
+                }
+                @include min-phones {
+                    font-size: 8px;
+                }
+            }
+            .working-hours {
+                color: white;
+                @media screen and (max-width: 610px) {
+                    font-size: 14px;
+                }
+                @include phones {
+                    font-size: 10px;
+                }
+                @media screen and (max-width: 370px) {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}
+
+//стили форм
+.form-order, .form-more {
+    .block-title {
+        color: white;
+        font-size: 30px;
+        font-family: Circe-Bold;
+        @include phones {
+            font-size: 24px;
+        }
+    }
+    :-ms-input-placeholder {
+        color: white;
+        font-size: 13px;
+        font-family: Circe;
+    }
+    ::-webkit-input-placeholder {
+        color: white;
+        font-size: 13px;
+        font-family: Circe;
+    }
+    :-moz-placeholder {
+        color: white;
+        font-size: 13px;
+        font-family: Circe;
+    }
+    ::-moz-placeholder {
+        color: white;
+        font-size: 13px;
+        font-family: Circe;
+        opacity: 1;
+    }
+    &__cards {
+        color: white;
+        font-family: Circe-Bold;
+        font-size: 24px;
+        @include phones {
+            font-size: 16px;
+            font-family: Circe;
+        }
+    }
+    &__checkbox {
+        .label {
+            font-size: 11px;
+            color: white;
+        }
+    }
+    .btn {
+        @include min-phones {
+            font-size: 12px;
+        }
+    }
+}
+.form-price {
+    .block-title {
+        font-size: 30px;
+        font-family: Circe-Bold;
+        @include phones {
+            font-size: 24px;
+        }
+    }
+    :-ms-input-placeholder {
+        color: #2d0b37;
+        font-size: 13px;
+        font-family: Circe;
+    }
+    ::-webkit-input-placeholder {
+        color: #2d0b37;
+        font-size: 13px;
+        font-family: Circe;
+    }
+    :-moz-placeholder {
+        color: #2d0b37;
+        font-size: 13px;
+        font-family: Circe;
+    }
+    ::-moz-placeholder {
+        color: #2d0b37;
+        font-size: 13px;
+        font-family: Circe;
+        opacity: 1;
+    }
+    input[type="text"] {
+        border: 1px solid #2d0b37;
+    }
+    &__cards {
+        color: #2d0b37;
+        font-family: Circe-Bold;
+        font-size: 16px;
+        text-transform: uppercase;
+        @include phones {
+            font-size: 16px;
+            font-family: Circe;
+        }
+    }
+    &__checkbox {
+        .label {
+            font-size: 11px;
+            color: #2d0b37;
+        }
+    }
+    .btn {
+        @include min-phones {
+            font-size: 12px;
+        }
+    }
+
+}
+//всплывающее окно "Заявка принята"
+.form-modal {
+    h3, p, span {
+        color: white;
+    }
+    h3 {
+        font-size: 22px;
+    }
+}
+
+//Детская версия сайта
+.main-page {
+    &.child {
+        color: black;
+        .bx-pager-link {
+            color: black;
+            @include phones {
+                color: white;
+            }
+        }
+    }
+}
+.address {
+    &.child {
+        color: black;
+    }
+}
+
+//Страница Карты
+.current-title {
+    font-size: 36px;
+    @include min-tablets {
+        font-size: 30px;
+    }
+    @include phones {
+        font-size: 20px;
+    }
+    &.violet {
+        color: #2d0b37;
+    }
+}
+.small-title {
+    font-size: 30px;
+    color: white;
+    &.violet {
+        color: #2d0b37;
+    }
+    @include phones {
+        font-size: 18px;
+    }
+}
+.way {
+    color: white;
+    @include phones {
+        font-size: 12px;
+    }
+    &.violet {
+        color: #2d0b37;
+        a {
+             color: #2d0b37;
+        }
+    }
+}
+.card-options__name {
+    color: white;
+    font-size: 14px;
+    @include laptop {
+        font-size: 13px;
+    }
+    @media screen and (max-width: 1000px) {
+        font-size: 11px;
+    }
+    @include min-tablets {
+        font-size: 13px;
+    }
+    @include phones {
+        font-size: 10px;
+    }
+}
+.cards-kind {
+    &__title {
+        color: #2d0b37;
+        font-size: 48px;
+        font-family: Circe-Extra-Bold;
+        @include min-tablets {
+            font-size: 36px;
+        }
+        @include phones {
+            font-size: 20px;
+        }
+    }
+    &__desc {
+        color: #2d0b37;
+        font-size: 24px;
+        @include min-tablets {
+            font-size: 14px;
+        }
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    &__item {
+        &.limit {
+            .cards-kind__title, .cards-kind__desc, .cards-btn__link2 {
+                color: white;
+            }
+            .cards-btn__link2 {
+                border: 1px solid white; 
+            }
+        }
+        .cards-btn__link1, .cards-btn__link2, .cards-btn__link3, .cards-btn__link4 {
+            color: #2d0b37; 
+            &.active, &:hover {
+                background-color: #7b3a8e;
+                border: 1px solid #7b3a8e;
+                color: white;
+            }
+            @include phones {
+                font-size: 12px;
+            }
+        }
+    }
+}
+.cards-more__list {
+    color: #2d0b37;
+    a {
+        font-weight: bold;
+        color: #2d0b37;
+    }
+}
+.cards-more__item {
+    color: #7b398d;
+    span {
+        color: #2d0b37;
+        @include phones {
+            font-size: 14px;
+        }
+    } 
+}
+.cards-more__inside-list {
+    font-size: 14px;
+    color: #2d0b37;
+}
+.cards-hidden {
+    th {
+        color: white;
+        @include min-tablets {
+            font-size: 14px;
+        }
+        @include phones {
+            font-size: 11px;
+            font-weight: normal;
+        }
+    }
+    td {
+        color: #2d0b37;
+        font-family: Circe-Bold;
+        @include min-tablets {
+            font-size: 14px;
+        }
+        @include phones {
+            font-size: 11px;
+            font-family: Circe;
+        }
+        &.td-special {
+            color: white;
+        }
+    }
+}
+.corporate-info {
+    &__text {
+        color: #2d0b37;
+        @include phones {
+            font-size: 14px;
+        }
+    }
+    &__title {
+        color: #7b3a8e;
+    }
+    &__notice {
+        font-size: 12px;
+    }
+    a {
+        color: #2d0b37;
+    }
+    .offers {
+        li {
+            color: #7b398d;
+            font-weight: bold;
+        }
+        p {
+            color: #2d0b37;
+            font-weight: normal;
+        }
+    }
+}
+.card-conditionals {
+    &__title, &__desc {
+        color: #2d0b37;
+    }
+    &__title {
+        font-size: 20px;
+        font-family: Circe-Bold;
+        @include min-tablets {
+            font-size: 16px;
+        }
+    }
+    &__desc {
+        font-size: 15px;
+        @include min-tablets {
+            font-size: 13px;
+        }
+    }
+}
+//Страница "О клубе"
+.desc {
+    color: #2d0b37;
+    &__title {
+        font-size: 24px;
+        @include min-tablets {
+            font-size: 18px;
+        }
+        @include phones {
+            font-size: 15px;
+        }
+    }
+    &__text {
+        font-size: 20px;
+        @include min-tablets {
+            font-size: 14px;
+        }
+        @include phones {
+            font-size: 13px;
+        }
+    }
+}
+.about {
+    .training__content {
+        .training__link {
+            @include phones {
+                font-size: 14px;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+.reasons {
+    &__desc {
+        color: #2d0b37;
+        font-size: 12px;
+        font-family: Circe-Bold;
+        @include phones {
+            font-size: 10px;
+        }
+    }
+}
+.main-video {
+    &__title {
+        color: white;
+        font-size: 24px;
+        @include phones {
+            font-size: 20px;
+        }
+        @include min-phones {
+            font-size: 16px;
+        }
+    }
+}
+.media {
+    .block-title {
+        color: #2d0b37;
+    }
+    &__title {
+        color: #2d0b37;
+        font-size: 14px;
+        font-family: Circe-Bold;
+        @include phones {
+            font-size: 11px;
+        }
+    }
+}
+//Услуги
+.services {
+    &__title {
+        font-size: 18px;
+        color: #2d0b37;
+        &.small {
+            font-size: 14px;
+        }
+    }
+    &__text {
+        color: #382c39;
+        font-size: 16px;
+    }
+    &__more1, &__more2, &__more3 {
+        color: #382c39;
+    }
+}
+//Контакты
+.contact {
+    .address, .info, .time {
+         color: #382c39;
+         @include laptop {
+             font-size: 14px;
+         }
+    }
+    &__left {
+        h3 {
+            color: #2d0b37;
+            font-size: 16px;
+            font-family: Circe-Bold;
+        }
+    }
+    &__list {
+        color: #382c39;
+    }
+    &__phones {
+        font-size: 30px;
+        color: #382c39;
+        @include laptop {
+            font-size: 26px;
+        }
+        @include phones {
+            font-size: 25px;
+        }
+    }
+    &__place {
+        font-size: 20px;
+        @include laptop {
+            font-size: 16px;
+        }
+        @include phones {
+            font-size: 14px;
+        }
+        span {
+            font-size: 14px;
+            @include laptop {
+                font-size: 12px;
+            }
+            @include phones {
+                font-size: 10px;
+            }
+        }
+    }
+    &__title {
+        color: #382c39;
+        font-size: 30px;
+        @include laptop {
+            font-size: 24px;
+        }
+        @include phones {
+            font-size: 18px;
+        }
+    }
+    ::-webkit-input-placeholder {
+        font-family: Circe;
+        color: #2d0b37;
+        font-size: 13px;
+    }
+    :-moz-placeholder {
+        font-family: Circe;
+        color: #2d0b37;
+        font-size: 13px;
+    }
+    :-ms-input-placeholder {
+        font-family: Circe;
+        color: #2d0b37;
+        font-size: 13px;
+    }
+    ::-moz-placeholder {
+        font-family: Circe;
+        color: #2d0b37;
+        font-size: 13px;
+    }
+    &__checkbox {
+        .label {
+            font-size: 13px;
+        }
+    }
+    .submit {
+        color: white;
+        font-family: Circe;
+        @include phones {
+            font-size: 14px;
+        }
+    }
+}
+//Наша команда 
+.team {
+    &__title {
+        color: #a9a9a9;
+        span {
+            color: #2d0b37;
+            &.white {
+                color: white;
+            }
+        }
+        @include phones {
+            font-size: 18px;
+        }
+    }
+    &__name, &__occupation {
+        color: #2d0b37;
+    }
+    &__name {
+        font-size: 16px;
+        @include phones {
+            font-size: 14px;
+        }
+    }
+    &__occupation {
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    &__btn {
+        a {
+            color: #2d0b37;
+            @include phones {
+                font-size: 13px;
+            }
+        }
+        &:hover {
+            a {
+                color: white;
+                @include phones {
+                    color: #2d0b37;
+                }
+            }
+        }
+    }
+}
+.more-content {
+    .team__name {
+        font-size: 18px;
+    }
+    .more-text {
+        font-size: 17px;
+    }
+    .more-btn {
+        font-size: 15px;
+    }
+    .more-desc {
+        @include tablets {
+            font-size: 14px;
+        }
+        @include min-tablets {
+            font-size: 12px;
+        }
+    }
+}
+.tabs {
+    label {
+        color: #2d0b37;
+        font-size: 18px;
+        @media screen and (max-width: 1324px) {
+            font-size: 16px;
+        }
+        @include phones {
+            font-size: 12px;
+        }
+    }
+}
+.calendar {
+    .tabs {
+        label {
+            color: white;
+            font-size: 16px;
+        }
+    }
+}
+.back {
+    color: #2d0b37;
+    font-size: 12px;
+    font-family: Circe-Bold;
+}
+//Новости
+.last-news, .news-more {
+    &__title {
+        color: #2d0b37;
+        font-size: 30px;
+        font-family: Circe-Bold;
+        @include min-tablets {
+            font-size: 26px;
+        }
+    }
+    .date {
+        color: #2d0b37;
+        font-family: Circe-Bold;
+    }
+    .number {
+        color: white;
+        font-size: 20px;
+        font-family: Circe-Bold;
+    }
+    .calendar-link {
+        font-size: 16px;
+        @include laptop {
+            font-size: 14px;
+        }
+    }
+    .hide-calendar {
+        &__month, &__year {
+            color: white;
+            font-size: 30px;
+            font-family: Circe-Bold;
+            @include laptop {
+                font-size: 26px;
+            }
+            @include min-tablets {
+                font-size: 20px;
+            }
+        }
+        &__days {
+            color: white;
+            font-size: 12px;
+        }
+        &__numbers {
+            color: white;
+            font-size: 26px;
+            font-family: Circe-Bold;
+            @include min-tablets {
+                font-size: 15px;
+            }
+            a {
+                &.non-active {
+                    color: #716872;
+                }
+            }
+        }
+        &__more {
+            font-size: 14px;
+        }
+    }
+}
+.news-slider {
+    .block-title {
+        font-size: 30px;
+        color: #65516b;
+        @include laptop {
+            font-size: 24px;
+        }
+        span {
+            color: #2d0b37; 
+        }
+    }
+    .years {
+        &__link {
+            color: #2d0b37; 
+            padding-right: 20px;
+            font-size: 14px;
+            &:hover, &.active {
+                text-decoration: underline;
+            }
+        }
+    }
+    .news__item {
+        .number {
+            font-size: 20px;
+            color: white;
+            @include laptop {
+                font-size: 18px;
+            }
+        }
+        &:hover {
+            .news__link {
+                color: #7b398d;
+            }
+        }
+        .news__link, .news__item, .link {
+            color: #3d3d3d;
+        }
+        .news__text {
+            font-size: 16px;
+            @include laptop {
+                font-size: 15px;
+            }
+            @include tablets {
+                font-size: 13px;
+            }
+        }
+        .link {
+            font-size: 14px;
+        }
+    }
+}
+.news-show {
+    .news__link, .news__item, .link {
+        color: #3d3d3d;
+    }
+    .news__link {
+        font-size: 14px;
+    }
+    .news__text {
+        font-size: 16px;
+        @include laptop {
+            font-size: 12px;
+            font-family: Circe;
+        }
+    }
+    .link {
+        font-size: 12px;
+    }
+}
+//Новости подробно
+.news-more {
+    &__title {
+        font-size: 36px;
+        color: #2d0b37;
+        font-family: Circe-Bold;
+        @include laptop {
+            font-size: 30px;
+        }
+    }
+    &__text {
+        color: #3d3d3d;
+        @include phones {
+            font-size: 14px;
+        }
+    }
+    .share {
+        color: #3d3d3d;
+        @include phones {
+            font-size: 14px;
+        }
+    }
+}
+.comments {
+    &__title {
+        color: #2d0b37;
+        font-size: 24px;
+        font-family: Circe-Bold;
+        @include phones {
+            font-size: 20px;
+        }
+    }
+    form {
+        :-moz-placeholder {
+            color: #2d0b37;
+            font-size: 14px;
+            font-family: Circe;
+        }
+        :-ms-input-placeholder {
+            color: #2d0b37;
+            font-size: 14px;
+            font-family: Circe;
+        }
+        ::-moz-placeholder {
+            color: #2d0b37;
+            font-size: 14px;
+            font-family: Circe;
+        }
+        ::-webkit-input-placeholder {
+            color: #2d0b37;
+            font-size: 14px;
+            font-family: Circe;
+        }
+        button {
+            color: white;
+            font-family: Circe;
+            font-size: 16px;
+            @include laptop {
+                font-size: 14px;
+            }
+        }
+    }
+    &__number, &__name {
+        color: #7b398d;
+        font-family: Circe-Bold;
+    }
+    &__all {
+        a {
+           color: #7b398d;
+            font-family: Circe-Bold; 
+        }
+    }
+    &__name {
+        font-size: 24px;
+        @include phones {
+            font-size: 20px;
+        }
+    }
+    &__number, &__all {
+        font-size: 18px;
+    }
+    &__text {
+        color: #1e0f00;
+        @include phones {
+            font-size: 14px;
+        }
+    }
+}
