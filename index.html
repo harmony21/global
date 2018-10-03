@@ -8,6 +8,7 @@
         <link href="css/normalize.css" type="text/css" rel="stylesheet" />   
         <link href="css/main.css" type="text/css" rel="stylesheet" /> 
         <link href="css/elements.css" type="text/css" rel="stylesheet" /> 
+        <link rel="stylesheet" href="owl-carousel/owl.carousel.css"/>
     </head>
     <body>
         <!-- Первая секция -->
@@ -120,118 +121,68 @@
         <section class="training">
             <div class="training__top">
                 <div class="training__wrap">
-                    <div class="train-arrow-left"></div>
-                    <div class="train-arrow-right"></div>
+                    <div class="train-arrow-left" id="js-prev"></div>
+                    <div class="train-arrow-right" id="js-next"></div>
                     <h3 class="block-title">Популярные тренировки</h3>
                 </div>
                 <a href="#" class="link">Все тренировки</a>
             </div>
             <hr color="#7b3a8e" class="hr-violet">
-            <div class="training__content">
-                <ul class="bxslider2"> 
-                    <li>
-                        <div class="container">
-                            <div class="training__item--first">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Тренировка с тренером в аква-зоне
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--second">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Персональная тренировка по боксу
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--third">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Персональная тренировка по йоге в полете
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--fourth">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Тренировка с тренером в аква-зоне
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="container">
-                            <div class="training__item--second">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Персональная тренировка по боксу
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--first">
-                               <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Тренировка с тренером в аква-зоне
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--third">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Персональная тренировка по йоге в полете
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--fourth">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Тренировка с тренером в аква-зоне
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="container">
-                            <div class="training__item--first">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Тренировка с тренером в аква-зоне
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--second">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Персональная тренировка по боксу
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--third">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Персональная тренировка по йоге в полете
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--fourth">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Тренировка с тренером в аква-зоне
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul> 
+            <div class="training__content" id="carousel">
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="images/train4.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="images/train2.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="images/train4.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="images/train3.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="images/train1.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="images/train2.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Календарь мероприятий -->
@@ -248,7 +199,7 @@
                 </div> 
                 <div id="slider"> 
                     <ul class="listslider"> 
-                        <li> 
+                        <li class="calendar-item"> 
                             <div class="slide-block"> 
                                 <h3 class="block-title">Февраль 2018</h3> 
                                 <div class="tabs">
@@ -419,111 +370,111 @@
                                 </div> 
                             </div> 
                         </li> 
-                        <li> 
+                        <li class="calendar-item"> 
                             <div class="slide-block"> 
                                 <h3 class="block-title">Март 2018</h3> 
                                 <div class="tabs">
-                                    <input id="tab1" type="radio" name="tabs1"> 
-                                    <label for="tab1" title="1">1</label>
+                                    <input id="tab001" type="radio" name="tabs1"> 
+                                    <label for="tab001" title="1">1</label>
                         
-                                    <input id="tab2" type="radio" name="tabs1">
-                                    <label for="tab2" title="2">2</label>
+                                    <input id="tab002" type="radio" name="tabs1">
+                                    <label for="tab002" title="2">2</label>
                                 
-                                    <input id="tab3" type="radio" name="tabs1">
-                                    <label for="tab3" title="3">3</label>
+                                    <input id="tab003" type="radio" name="tabs1">
+                                    <label for="tab003" title="3">3</label>
                                 
-                                    <input id="tab4" type="radio" name="tabs1">
-                                    <label for="tab4" title="4">4</label> 
+                                    <input id="tab004" type="radio" name="tabs1">
+                                    <label for="tab004" title="4">4</label> 
 
-                                    <input id="tab5" type="radio" name="tabs1">
-                                    <label for="tab5" title="5">5</label>
+                                    <input id="tab005" type="radio" name="tabs1">
+                                    <label for="tab005" title="5">5</label>
 
-                                    <input id="tab6" type="radio" name="tabs1">
-                                    <label for="tab6" title="6">6</label>
+                                    <input id="tab006" type="radio" name="tabs1">
+                                    <label for="tab006" title="6">6</label>
 
-                                    <input id="tab7" type="radio" name="tabs1">
-                                    <label for="tab7" title="7">7</label>
+                                    <input id="tab007" type="radio" name="tabs1">
+                                    <label for="tab007" title="7">7</label>
 
-                                    <input id="tab8" type="radio" name="tabs1">
-                                    <label for="tab8" title="8">8</label>
+                                    <input id="tab008" type="radio" name="tabs1">
+                                    <label for="tab008" title="8">8</label>
 
-                                    <input id="tab9" type="radio" name="tabs1">
-                                    <label for="tab9" title="9">9</label>
+                                    <input id="tab009" type="radio" name="tabs1">
+                                    <label for="tab009" title="9">9</label>
 
-                                    <input id="tab10" type="radio" name="tabs1">
-                                    <label for="tab10" title="10">10</label>
+                                    <input id="tab010" type="radio" name="tabs1">
+                                    <label for="tab010" title="10" class="active checked current">10</label>
 
-                                    <input id="tab11" type="radio" name="tabs1">
-                                    <label for="tab11" title="11">11</label>
+                                    <input id="tab011" type="radio" name="tabs1">
+                                    <label for="tab011" title="11">11</label>
 
-                                    <input id="tab12" type="radio" name="tabs1">
-                                    <label for="tab12" title="12">12</label>
+                                    <input id="tab012" type="radio" name="tabs1">
+                                    <label for="tab012" title="12">12</label>
 
-                                    <input id="tab13" type="radio" name="tabs1">
-                                    <label for="tab13" title="13">13</label>
+                                    <input id="tab013" type="radio" name="tabs1">
+                                    <label for="tab013" title="13">13</label>
 
-                                    <input id="tab14" type="radio" name="tabs1">
-                                    <label for="tab14" title="14">14</label>
+                                    <input id="tab014" type="radio" name="tabs1">
+                                    <label for="tab014" title="14">14</label>
 
-                                    <input id="tab15" type="radio" name="tabs1">
-                                    <label for="tab15" title="15">15</label>
+                                    <input id="tab015" type="radio" name="tabs1">
+                                    <label for="tab015" title="15">15</label>
 
-                                    <input id="tab16" type="radio" name="tabs1">
-                                    <label for="tab16" title="16" class="active current checked">16</label>
+                                    <input id="tab016" type="radio" name="tabs1">
+                                    <label for="tab016" title="16">16</label>
 
-                                    <input id="tab17" type="radio" name="tabs1">
-                                    <label for="tab17" title="17">17</label>
+                                    <input id="tab017" type="radio" name="tabs1">
+                                    <label for="tab017" title="17">17</label>
 
-                                    <input id="tab18" type="radio" name="tabs1">
-                                    <label for="tab18" title="18">18</label>
+                                    <input id="tab018" type="radio" name="tabs1">
+                                    <label for="tab018" title="18">18</label>
 
-                                    <input id="tab19" type="radio" name="tabs1">
-                                    <label for="tab19" title="19" class="active">19</label>
+                                    <input id="tab019" type="radio" name="tabs1">
+                                    <label for="tab019" title="19" class="active">19</label>
 
-                                    <input id="tab20" type="radio" name="tabs1">
-                                    <label for="tab20" title="20">20</label>
+                                    <input id="tab020" type="radio" name="tabs1">
+                                    <label for="tab020" title="20">20</label>
 
-                                    <input id="tab21" type="radio" name="tabs1">
-                                    <label for="tab21" title="21">21</label>
+                                    <input id="tab021" type="radio" name="tabs1">
+                                    <label for="tab021" title="21">21</label>
 
-                                    <input id="tab22" type="radio" name="tabs1">
-                                    <label for="tab22" title="22">22</label>
+                                    <input id="tab022" type="radio" name="tabs1">
+                                    <label for="tab022" title="22">22</label>
 
-                                    <input id="tab23" type="radio" name="tabs1">
-                                    <label for="tab23" title="23">23</label>
+                                    <input id="tab023" type="radio" name="tabs1">
+                                    <label for="tab023" title="23">23</label>
 
-                                    <input id="tab24" type="radio" name="tabs1">
-                                    <label for="tab24" title="24">24</label>
+                                    <input id="tab024" type="radio" name="tabs1">
+                                    <label for="tab024" title="24">24</label>
 
-                                    <input id="tab25" type="radio" name="tabs1">
-                                    <label for="tab25" title="25">25</label>
+                                    <input id="tab025" type="radio" name="tabs1">
+                                    <label for="tab025" title="25">25</label>
 
-                                    <input id="tab26" type="radio" name="tabs1">
-                                    <label for="tab26" title="26">26</label>
+                                    <input id="tab026" type="radio" name="tabs1">
+                                    <label for="tab026" title="26">26</label>
 
-                                    <input id="tab27" type="radio" name="tabs1">
-                                    <label for="tab27" title="27">27</label>
+                                    <input id="tab027" type="radio" name="tabs1">
+                                    <label for="tab027" title="27">27</label>
 
-                                    <input id="tab28" type="radio" name="tabs1">
-                                    <label for="tab28" title="28">28</label>
+                                    <input id="tab028" type="radio" name="tabs1">
+                                    <label for="tab028" title="28">28</label>
 
-                                    <input id="tab29" type="radio" name="tabs1">
-                                    <label for="tab29" title="29">29</label>
+                                    <input id="tab029" type="radio" name="tabs1">
+                                    <label for="tab029" title="29">29</label>
 
-                                    <input id="tab30" type="radio" name="tabs1">
-                                    <label for="tab30" title="30">30</label>
+                                    <input id="tab030" type="radio" name="tabs1">
+                                    <label for="tab030" title="30">30</label>
 
-                                    <input id="tab31" type="radio" name="tabs1">
-                                    <label for="tab31" title="31">31</label>
+                                    <input id="tab031" type="radio" name="tabs1">
+                                    <label for="tab031" title="31">31</label>
         
                                     <div class="clear"></div> 
                                     <div class="wrapper-tab">
-                                        <section id="content-tab16">
+                                        <section id="content-tab010">
                                             <div class="content-container">
                                                 <div class="measure">
                                                     <img src="images/news-calendar.png" alt="">
                                                     <div class="measure__info">
-                                                        <h3 class="block-title"><span>16</span> <span>марта</span></h3>
+                                                        <h3 class="block-title"><span>10</span> <span>марта</span></h3>
                                                         <h4 class="measure__title">Заголовок мероприятия</h4>
                                                         <p class="measure__desc">
                                                             Небольшое описание мероприятия. Небольшое описание мероприятия. Небольшое описание мероприятия.
@@ -537,7 +488,7 @@
                                         </section>   
                                     </div>
                                     <div class="wrapper-tab">
-                                        <section id="content-tab19">
+                                        <section id="content-tab019">
                                             <div class="content-container">
                                                 <div class="measure">
                                                     <img src="images/news-calendar.png" alt="">
@@ -632,9 +583,33 @@
                 <li>Подписки: 1 995</li>
             </ul>
             <div class="instagram__content">
-                <img src="images/photos.png" alt="">
-                <img src="images/photos.png" alt=""> 
-                <img src="images/photos.png" alt=""> 
+                <a href="#" class="instagram__link">
+                    <img src="images/photos1.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos2.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos3.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos1.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos2.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos3.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos1.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos2.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="images/photos3.png" alt="">
+                </a>
             </div>
         </section>
         <!-- Вместе с Global -->
@@ -828,5 +803,8 @@
         <script src="js/mobile-menu.js"></script>
         <script src="js/form.js"></script>
         <script src="js/calendar.js"></script>
+
+        <script src="owl-carousel/owl.carousel.min.js"></script>
+
     </body>
 </html>

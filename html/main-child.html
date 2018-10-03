@@ -8,6 +8,7 @@
         <link href="..//css/normalize.css" type="text/css" rel="stylesheet" />   
         <link href="..//css/main.css" type="text/css" rel="stylesheet" /> 
         <link href="..//css/elements.css" type="text/css" rel="stylesheet" /> 
+        <link rel="stylesheet" href="..//owl-carousel/owl.carousel.css"/>
     </head>
     <body>
         <!-- Первая секция -->
@@ -121,118 +122,68 @@
         <section class="training">
             <div class="training__top">
                 <div class="training__wrap">
-                    <div class="train-arrow-left"></div>
-                    <div class="train-arrow-right"></div>
+                    <div class="train-arrow-left" id="js-prev"></div>
+                    <div class="train-arrow-right" id="js-next"></div>
                     <h3 class="block-title">Популярные тренировки</h3>
                 </div>
                 <a href="#" class="link">Все тренировки</a>
             </div>
             <hr color="#7b3a8e" class="hr-violet">
-            <div class="training__content">
-                <ul class="bxslider2"> 
-                    <li>
-                        <div class="container">
-                            <div class="training__item--first child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Школа плаванья
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--second child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Йога для тинейджеров
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--third child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Королевская осанка
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--fourth child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Черлидинг
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="container">
-                            <div class="training__item--first child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Школа плаванья
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--second child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Йога для тинейджеров
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--third child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Королевская осанка
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--fourth child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Черлидинг
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                   <li>
-                        <div class="container">
-                            <div class="training__item--first child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Школа плаванья
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--second child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Йога для тинейджеров
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--third child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Королевская осанка
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="training__item--fourth child">
-                                <a href="#" class="training__link">
-                                    <hr color="white">
-                                    Черлидинг
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul> 
+            <div class="training__content" id="carousel">
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="../images/train4-child.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Школа плавания
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="../images/train2-child.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Черлидинг
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="../images/train4-child.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Королевская йога
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="../images/train3-child.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="../images/train1-child.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="training__item carousel-element">
+                        <img src="../images/train2.png" alt="" class="training__img">
+                        <a href="#" class="training__link">
+                            <hr color="white">
+                            Тренировка с тренером в аква-зоне
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Календарь мероприятий -->
@@ -633,9 +584,33 @@
                 <li>Подписки: 1 995</li>
             </ul>
             <div class="instagram__content">
-                <img src="..//images/photos.png" alt="">
-                <img src="..//images/photos.png" alt=""> 
-                <img src="..//images/photos.png" alt=""> 
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos1.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos2.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos3.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos1.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos2.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos3.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos1.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos2.png" alt="">
+                </a>
+                <a href="#" class="instagram__link">
+                    <img src="..//images/photos3.png" alt="">
+                </a>
             </div>
         </section>
         <!-- Вместе с Global -->
@@ -829,5 +804,7 @@
         <script src="..//js/mobile-menu.js"></script>
         <script src="..//js/form.js"></script>
         <script src="..//js/calendar.js"></script>
+
+        <script src="..//owl-carousel/owl.carousel.min.js"></script>
     </body>
 </html>

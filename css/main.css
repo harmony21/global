@@ -568,58 +568,6 @@ body {
   .training__wrap .train-arrow-right {
     background: url("..//images/arrow-right-violet.png"); }
 
-.training .bxslider2 li {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-
-@media screen and (max-width: 550px) {
-  .training .bx-viewport {
-    height: 200px !important; } }
-
-@media screen and (max-width: 350px) {
-  .training .bx-viewport {
-    height: 140px !important; } }
-
-.training .bx-controls-direction {
-  display: none; }
-
-.training .bx-pager {
-  display: none; }
-  @media screen and (max-width: 550px) {
-    .training .bx-pager {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-top: 20px; } }
-
-.training .bx-pager-item {
-  background-color: #7b3a8e;
-  margin-right: 10px;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%; }
-
-.training .bx-pager-link {
-  color: #7b3a8e;
-  margin-left: 3px; }
-  .training .bx-pager-link.active {
-    background-color: white;
-    border-radius: 50%;
-    font-size: 0px;
-    position: absolute;
-    padding: 2px;
-    margin-left: 2px;
-    margin-top: 2px;
-    height: 7px;
-    width: 7px; }
-
 .training__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -651,7 +599,9 @@ body {
   flex-direction: column;
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out; }
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0; }
   @media screen and (max-width: 1366px) {
     .training__link {
       padding-bottom: 15px;
@@ -669,10 +619,7 @@ body {
       width: 150px; } }
   @media screen and (max-width: 550px) {
     .training__link {
-      width: 112px;
-      padding-left: 0;
       font-family: Circe-Bold;
-      padding-bottom: 0;
       position: absolute;
       margin-top: 25px; } }
   @media screen and (max-width: 350px) {
@@ -682,7 +629,7 @@ body {
 .training .container {
   overflow: hidden; }
 
-.training__item--first, .training__item--second, .training__item--third, .training__item--fourth {
+.training__item {
   width: 472px;
   height: 299px;
   display: -webkit-box;
@@ -697,73 +644,66 @@ body {
   justify-content: flex-end;
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out; }
-  .training__item--first:hover, .training__item--second:hover, .training__item--third:hover, .training__item--fourth:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05); }
-    .training__item--first:hover .training__link, .training__item--first:hover hr, .training__item--second:hover .training__link, .training__item--second:hover hr, .training__item--third:hover .training__link, .training__item--third:hover hr, .training__item--fourth:hover .training__link, .training__item--fourth:hover hr {
-      -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
-      transform: scale(0.9); }
+  transition: 0.3s ease-in-out;
+  position: relative; }
+  @media screen and (min-width: 1030px) {
+    .training__item:hover {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05); }
+      .training__item:hover .training__link, .training__item:hover hr {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9); } }
   @media screen and (max-width: 1366px) {
-    .training__item--first, .training__item--second, .training__item--third, .training__item--fourth {
+    .training__item {
       width: 330px; } }
   @media screen and (max-width: 1030px) {
-    .training__item--first, .training__item--second, .training__item--third, .training__item--fourth {
+    .training__item {
       height: 200px;
       width: 250px; } }
   @media screen and (max-width: 550px) {
-    .training__item--first, .training__item--second, .training__item--third, .training__item--fourth {
+    .training__item {
       width: 220px;
       height: 170px;
       margin: 0 5px; } }
   @media screen and (max-width: 350px) {
-    .training__item--first, .training__item--second, .training__item--third, .training__item--fourth {
+    .training__item {
       width: 140px;
       height: 88px; } }
-  .training__item--first hr, .training__item--second hr, .training__item--third hr, .training__item--fourth hr {
+  .training__item hr {
     border: 2px solid white;
     width: 80px;
     margin-left: 0;
     -webkit-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out; }
-    @media screen and (max-width: 550px) {
-      .training__item--first hr, .training__item--second hr, .training__item--third hr, .training__item--fourth hr {
-        border: 2px solid #7b3a8e;
-        position: absolute;
-        margin-top: 0; }
-        .training__item--first hr.child, .training__item--second hr.child, .training__item--third hr.child, .training__item--fourth hr.child {
-          margin-top: 10px; } }
-    @media screen and (max-width: 350px) {
-      .training__item--first hr, .training__item--second hr, .training__item--third hr, .training__item--fourth hr {
-        margin-top: 15px; } }
 
-.training__item--first {
-  background: url("..//images/train4.png") center center no-repeat; }
+.training__img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%; }
+
+.training .owl-item {
+  width: 472px; }
+  @media screen and (max-width: 1366px) {
+    .training .owl-item {
+      width: 330px !important; } }
+  @media screen and (max-width: 1030px) {
+    .training .owl-item {
+      height: 200px;
+      width: 250px !important; } }
   @media screen and (max-width: 550px) {
-    .training__item--first {
-      display: none; } }
-
-.training__item--second {
-  background: url("..//images/train3.png") center center no-repeat; }
-  @media screen and (max-width: 550px) {
-    .training__item--second {
-      background-size: contain; } }
-
-.training__item--third {
-  background: url("..//images/train2.png") center center no-repeat; }
-  @media screen and (max-width: 800px) {
-    .training__item--third {
-      display: none; } }
-
-.training__item--fourth {
-  background: url("..//images/train1.png") center center no-repeat;
-  margin-right: 0; }
-  @media screen and (max-width: 550px) {
-    .training__item--fourth {
-      background-size: contain; } }
+    .training .owl-item {
+      width: 220px !important;
+      height: 170px;
+      margin: 0 5px; } }
+  @media screen and (max-width: 350px) {
+    .training .owl-item {
+      width: 140px !important;
+      height: 88px; } }
 
 @-moz-document url-prefix() {
   @media screen and (max-width: 350px) {
@@ -806,8 +746,7 @@ body {
 .calendar {
   background: url("..//images/calendar.png") center center no-repeat;
   background-size: cover;
-  padding: 70px 376px 60px 376px;
-  margin-top: 10px; }
+  padding: 70px 376px 60px 376px; }
   @media screen and (max-width: 1730px) {
     .calendar {
       padding: 70px 194px 60px 194px; } }
@@ -1225,6 +1164,9 @@ body {
   margin-top: 50px;
   overflow: hidden; }
 
+.instagram__link {
+  height: 240px; }
+
 /* Вместе с Global */
 .together {
   background: url("..//images/footer.png") center center no-repeat;
@@ -1567,7 +1509,8 @@ body {
   background: url("..//images/arrow-right-active-child.png"); }
 
 .calendar.child {
-  background: url("..//images/calendar-child.png") center center no-repeat; }
+  background: url("..//images/calendar-child.png") center center no-repeat;
+  padding-top: 3px; }
 
 @media screen and (max-width: 550px) {
   .training__item--first.child hr, .training__item--second.child hr, .training__item--third.child hr, .training__item--fourth.child hr {
@@ -2833,12 +2776,8 @@ body {
     position: absolute; }
   .team .tabs label {
     font-weight: bold;
-    margin-right: 15px;
-    padding: 10px 15px;
+    padding: 10px;
     border: 1px solid white; }
-    @media screen and (max-width: 1324px) {
-      .team .tabs label {
-        padding: 10px; } }
     @media screen and (max-width: 1030px) {
       .team .tabs label {
         display: block;
@@ -3401,7 +3340,6 @@ body {
 
 .listslider {
   position: relative;
-  width: calc(100%*2);
   top: 0;
   left: 0;
   margin: 0;
@@ -3413,4 +3351,5 @@ body {
   display: -ms-flexbox;
   display: flex; }
   .listslider li {
-    list-style: none; }
+    list-style: none;
+    width: 50%; }

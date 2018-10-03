@@ -595,52 +595,6 @@ body {
             background: url('..//images/arrow-right-violet.png');
         }
     }
-    //Стили второго слайдера
-    .bxslider2 li {
-        display: flex !important;
-        justify-content: space-between;
-    }
-    .bx-viewport {
-        @include phones {
-            height: 200px !important;
-        }
-        @include min-phones {
-            height: 140px !important;
-        }
-    }
-    .bx-controls-direction {
-        display: none; 
-    }
-    .bx-pager {
-        display: none; 
-        @include phones {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-    }
-    .bx-pager-item {
-        background-color: #7b3a8e;
-        margin-right: 10px;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-    }
-    .bx-pager-link {
-        color: #7b3a8e;
-        margin-left: 3px;
-        &.active {
-            background-color: white;
-            border-radius: 50%;
-            font-size: 0px;
-            position: absolute;
-            padding: 2px;
-            margin-left: 2px;
-            margin-top: 2px;  
-            height: 7px;
-            width: 7px;
-        }
-    }
     &__content {
         display: flex;
         justify-content: space-between;
@@ -660,6 +614,8 @@ body {
         justify-content: flex-end;
         flex-direction: column;
         transition: 0.3s ease-in-out;
+        position: absolute;
+        bottom: 0;
         @include laptop {
             padding-bottom: 15px;
             padding-left: 15px;
@@ -676,10 +632,7 @@ body {
             width: 150px;
         }
         @include phones {
-            width: 112px;
-            padding-left: 0;
             font-family: Circe-Bold;
-            padding-bottom: 0;
             position: absolute;
             margin-top: 25px;
         }
@@ -690,76 +643,69 @@ body {
     .container {
         overflow: hidden;
     }
-    &__item--first, &__item--second, &__item--third, &__item--fourth {
-            width: 472px;
-            height: 299px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; 
-            transition: 0.3s ease-in-out;
-            &:hover {
+    &__item {
+        width: 472px;
+        height: 299px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        transition: 0.3s ease-in-out;
+        position: relative;
+        &:hover {
+            @media screen and (min-width: 1030px) {
                 transform: scale(1.05);
                 .training__link, hr {
                     transform: scale(0.90);
                 }
             }
-            @include laptop {
-                width: 330px;
-            } 
-            @include tablets {
-                height: 200px;
-                width: 250px;
-            }
-            @include phones {
-                width: 220px;
-                height: 170px;
-                margin: 0 5px;
-            }
-            @include min-phones {
-                width: 140px;
-                height: 88px;
-            }
+        }
+        @include laptop {
+            width: 330px;
+        } 
+        @include tablets {
+            height: 200px;
+            width: 250px;
+        }
+        @include phones {
+            width: 220px;
+            height: 170px;
+            margin: 0 5px;
+        }
+        @include min-phones {
+            width: 140px;
+            height: 88px;
+        }
         hr {
             border: 2px solid white;
             width: 80px;
             margin-left: 0;
             transition: 0.3s ease-in-out;
-            @include phones {
-                border: 2px solid #7b3a8e;
-                position: absolute;
-                margin-top: 0;
-                &.child {
-                    margin-top: 10px;
-                }
-            }
-            @include min-phones {
-                margin-top: 15px;
-            }
         }
     }
-    &__item--first {
-        background: url('..//images/train4.png') center center no-repeat;
+    &__img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        height: 100%;
+    }
+    .owl-item {
+        width: 472px;
+        @include laptop {
+            width: 330px !important;
+        }
+        @include tablets {
+            height: 200px;
+            width: 250px !important;
+        }
         @include phones {
-            display: none;
+            width: 220px !important;
+            height: 170px;
+            margin: 0 5px;
         }
-    }
-    &__item--second {
-        background: url('..//images/train3.png') center center no-repeat;
-        @include phones {
-            background-size: contain;
-        }
-    }
-    &__item--third {
-        background: url('..//images/train2.png') center center no-repeat;
-        @media screen and (max-width: 800px) {
-            display: none;
-        }
-    }
-    &__item--fourth {
-        background: url('..//images/train1.png') center center no-repeat;
-        margin-right: 0;
-        @include phones {
-            background-size: contain;
+        @include min-phones {
+            width: 140px !important;
+            height: 88px;
         }
     }
 }
@@ -781,7 +727,7 @@ body {
     }
 }
 .link {
-        text-decoration: underline;
+    text-decoration: underline;
 }
 .hr-violet {
     border: 2px solid #7b3a8e;
@@ -812,7 +758,6 @@ body {
     background: url('..//images/calendar.png') center center no-repeat;
     background-size: cover;
     padding: 70px 376px 60px 376px;
-    margin-top: 10px;
     @media screen and (max-width: 1730px) {
         padding: 70px 194px 60px 194px;
     }
@@ -1252,6 +1197,9 @@ body {
         margin-top: 50px;
         overflow: hidden;
     }
+    &__link {
+        height: 240px;
+    }
 }
 /* Вместе с Global */
 .together {
@@ -1592,6 +1540,7 @@ body {
 .calendar {
     &.child {
         background: url('..//images/calendar-child.png') center center no-repeat;
+        padding-top: 3px;
     }
 }
 .training {
@@ -2205,7 +2154,6 @@ body {
         }
     }
     .training__link {
-        // height: 100%;
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
@@ -2845,13 +2793,8 @@ body {
         }
         label {
             font-weight: bold;
-            margin-right: 15px;
-            padding: 10px 15px;
+            padding: 10px;
             border: 1px solid white;
-
-            @media screen and (max-width: 1324px) {
-                padding: 10px;
-            }
             @include tablets {
                 display: block;
                 float: left;
@@ -3421,7 +3364,7 @@ body {
 }
 .listslider {
     position: relative;
-    width: calc(100%*2);
+    // width: calc(100%*2);
     top: 0;
     left: 0;
     margin:0;
@@ -3430,6 +3373,7 @@ body {
     display: flex;
     li {
         list-style: none;
+        width: 50%;
     }
 }
 

@@ -195,10 +195,6 @@ a {
         @media screen and (max-width: 610px) {
             font-size: 10px;
         }
-        @include phones {
-            font-size: 9px;
-            color: #7b3a8e;
-        }
     }
 }
 .link {

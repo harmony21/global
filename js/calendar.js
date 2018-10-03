@@ -11,6 +11,11 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+    var items = $('.calendar-item').length;
+    console.log(items);
+
+    $('.listslider').css('width', 'calc(100%*'+items);
+
     var activeLabels = $('.checked').map(function() {
         return $(this).attr('for');
     })
