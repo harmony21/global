@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GLOBAL</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="..//css/normalize.css" type="text/css" rel="stylesheet" />   
+        <link href="..//css/main.css" type="text/css" rel="stylesheet" /> 
+        <link href="..//css/elements.css" type="text/css" rel="stylesheet" /> 
+    </head>
+    <body>
+        <!-- Первая секция -->
+        <section class="intro-personal-cabinet">
+            <header class="header">
+                <div class="header__top">
+                    <div class="contacts">
+                        <p class="address">г. Хабаровск, Ким Ю Чена 7А</p>
+                        <a href="tel:+7(4212)460000" class="phone">+7 (4212) 
+                            <span class="phone--bold">46-0000</span>
+                        </a>
+                    </div>
+                    <div class="links">
+                        <div class="lk">
+                            <a href="personal-cabinet.html" class="lk__title">Личный кабинет</a>
+                            <div class="lk__icon"></div>
+                        </div>
+                        <a href="main-child.html" class="childs">Детская версия сайта</a>
+                    </div>
+                </div>
+                <div class="header__bottom">
+                    <a href="..//index.html"><img src="..//images/logo.png" alt="" class="logo-img"></a>
+                   <nav class="menu">
+                        <a href="about.html" class="menu__item">О клубе</a>
+                        <a href="time-table.html" class="menu__item">Расписание</a>
+                        <a href="cards.html" class="menu__item">Карты</a>
+                        <a href="services.html" class="menu__item">Услуги</a>
+                        <a href="team.html" class="menu__item">Наша команда</a>
+                        <a href="news.html" class="menu__item">Новости</a>
+                        <a href="contacts.html" class="menu__item">Контакты</a>
+                    </nav>
+                    <div class="btn--header">
+                        <a href="#" class="btn__link--order">Заказать карту</a>
+                        <a href="#" class="hamburg-menu"><img src="..//images/mobile-menu.png" alt=""></a> 
+                    </div>   
+                </div>
+            </header>
+            <div class="mobile-menu">
+                <a href="#" class="close"><img src="..//images/close.png" alt=""></a>
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="..//index.html">Главная</a></li>
+                    <li class="mobile-menu__item"><a href="about.html">О клубе</a></li>
+                    <li class="mobile-menu__item"><a href="time-table.html">Расписание</a></li>
+                    <li class="mobile-menu__item"><a href="cards.html">Карты</a></li>
+                    <li class="mobile-menu__item"><a href="team.html">Наша команда</a></li>
+                    <li class="mobile-menu__item"><a href="news.html">Новости</a></li>
+                    <li class="mobile-menu__item"><a href="contacts.html">Контакты</a></li>
+                </ul>
+                <a href="#" class="order">Заказать карту</a>
+            </div>
+
+            <div class="" id="form-auth">
+                <div class="t-pop">Вход в личный кабинет</div>
+                <form action="" name="formAuth">
+                    <p class="error-text"></p>
+                    <p class="message-success"></p>
+                    <input type="hidden" name="AUTH_FORM" value="Y">
+                    <input type="hidden" name="TYPE" value="AUTH">
+                    <div class="field-p">
+                        <input type="text" name="NUMBER_OF_CARD" value placeholder="Ваш номер карты">
+                    </div>
+                    <input type="hidden" name="NUMBER" value>
+                    <div class="field-p">
+                        <input type="password" name="USER_PASSWORD" value autocomplete="off" placeholder="Ваш пароль">
+                    </div>
+                    <div class="but-form">
+                        <button type="submit" name="Login">Вход</button>
+                    </div>
+                    <p>
+                        <a href="#form-lost-password" class="cboxElement">Забыли пароль?</a>
+                    </p>
+                    <p>
+                        <a href="#form-remember-password" class="cboxElement">Восстановить пароль</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- Всплывающее окно "Заказать карту" -->
+        <div class="wrapper-order"></div>
+        <form action="" class="form-order" id="form-order" method="POST">
+            <h2 class="block-title">Заказать карту</h2>
+            <input type="text" name="user_name" placeholder="Ваше имя" value="" pattern="[A-Za-zА-Яа-яЁё]{,30}"><br>
+            <input type="text" name="user_phone" placeholder="Номер телефона" value="" pattern="[0-9]{,10}">
+            <ul class="form-order__cards">
+                <li>
+                    <label>
+                        <input class="checkbox" type="radio" name="checkbox-test">
+                        <span class="checkbox-custom"></span>
+                        <span class="label">Безлимитная</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input class="checkbox" type="radio" name="checkbox-test">
+                        <span class="checkbox-custom"></span>
+                        <span class="label">Лимитированные</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input class="checkbox" type="radio" name="checkbox-test">
+                        <span class="checkbox-custom"></span>
+                        <span class="label">Детские</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input class="checkbox" type="radio" name="checkbox-test">
+                        <span class="checkbox-custom"></span>
+                        <span class="label">Корпоративные</span>
+                    </label>
+                </li>
+            </ul>
+            <div class="form-order__checkbox">
+                <label>
+                    <input class="checkbox" type="checkbox" name="checkbox-test" required>
+                    <span class="checkbox-custom"></span>
+                    <span class="label">Даю согласие на обработку персональных данных *</span>
+                </label>
+            </div>
+            <!-- <div class="mf-captcha">
+                <input type="hidden" name="captcha_sid" value="0fa089c7ea51ff117493201a025f53c6">
+                <span class="mf-text" style="width: 25%;">Проверка от роботов<span class="mf-req">*</span></span>
+                <span><div class="g-recaptcha" data-theme="light" data-sitekey="6LdtFUwUAAAAAEluTbuNUYGbP0fur9ys2mE4pb4y" data-size="normal" data-badge="inline" data-callback="RecaptchafreeSubmitForm" data-widget="0"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdtFUwUAAAAAEluTbuNUYGbP0fur9ys2mE4pb4y&amp;co=aHR0cHM6Ly93d3cucGlyb2dpYnVsa2kucnU6NDQz&amp;hl=ru&amp;v=v1525372547704&amp;theme=light&amp;size=normal&amp;badge=inline&amp;cb=r3i168yht4dv" width="304" height="78" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div></span>
+                <input type="text" name="captcha_word" style="display:none" value="6LdtF">
+            </div> -->
+            <input type="submit" class="btn" name="submit" value="Заказать">
+            <div class="wrapper-modal"></div>
+            <div class="form-modal">
+                <img src="..//images/logo.png" alt="">
+                <h3>Ваша заявка отправлена</h3> 
+                <p>Спасибо за обращение!</p>
+                <span>Наш специалист свяжется с Вами в ближайшее время</span>      
+            </div>
+        </form>
+   
+        <script src="..//js/jquery-3.2.1.js"></script>
+        <script src="..//js/form.js"></script> 
+        <script src="..//js/mobile-menu.js"></script>    
+    </body>
+</html>

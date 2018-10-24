@@ -11,28 +11,29 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+
     var items = $('.calendar-item').length;
-    console.log(items);
 
     $('.listslider').css('width', 'calc(100%*'+items);
 
     var activeLabels = $('.checked').map(function() {
         return $(this).attr('for');
     })
+    var contentTabs = [];
+    for (var i = 0; i < activeLabels.length; i++) {
+        contentTabs.push(activeLabels[i]);
+    }
 
-    console.log(activeLabels);
+    var activeContents = [];
+    for (var i = 0; i < activeLabels.length; i++) {
+        activeContents.push('#content-'+activeLabels[i]);
+    }
 
-    var id0 = activeLabels[0];
-    var id1 = activeLabels[1];
- 
-    var activeContent0 = $('#content-'+id0);
-    var activeContent1 = $('#content-'+id1);
-
-    var activeWrapper0 = activeContent0.closest('.wrapper-tab');
-    var activeWrapper1 = activeContent1.closest('.wrapper-tab');
-    activeWrapper0.css('display','block');
-    activeWrapper1.css('display','block');
-    
+    var activeWrappers = [];
+    for (var i = 0; i < activeContents.length; i++) {
+        activeWrappers.push($(activeContents[i]).closest('.wrapper-tab').css('display', 'block'));
+    }
+   
     $('label').click(function(e) {
         var id = $(this).attr('for'),
         content = $('#content-'+id),
@@ -43,7 +44,6 @@ $(document).ready(function() {
             $(this).addClass('current');
             labels.removeClass('current');
             wrapper.css('display','block');
-            console.log(id);
             wrapper.closest('.bx-viewport').css('height','384');
             wrappers.css('display','none');
         }

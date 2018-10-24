@@ -26,3 +26,11 @@ $(window).resize(function() {
 $(document).ready(function() {
     $(".gallery").fancybox();
 });
+
+
+$(document).ready(function() {
+  $('.hide-content-lesson__close').on('click', function (e) {
+    e.preventDefault()
+    $.fancybox.close();
+  })
+});
