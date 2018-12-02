@@ -343,6 +343,10 @@ a {
     .form-order .block-title, .form-more .block-title {
       font-size: 24px; } }
 
+.form-order input, .form-more input {
+  color: #fff;
+  font-family: Circe; }
+
 .form-order :-ms-input-placeholder, .form-more :-ms-input-placeholder {
   color: white;
   font-size: 13px;
@@ -363,6 +367,18 @@ a {
   font-size: 13px;
   font-family: Circe;
   opacity: 1; }
+
+.form-order :focus:-moz-placeholder, .form-more :focus:-moz-placeholder {
+  opacity: 0; }
+
+.form-order :focus:-ms-input-placeholde, .form-more :focus:-ms-input-placeholde {
+  opacity: 0; }
+
+.form-order :focus::-moz-placeholder, .form-more :focus::-moz-placeholder {
+  opacity: 0; }
+
+.form-order :focus::-webkit-input-placeholder, .form-more :focus::-webkit-input-placeholder {
+  opacity: 0; }
 
 .form-order__cards, .form-more__cards {
   color: white;
@@ -410,7 +426,20 @@ a {
   opacity: 1; }
 
 .form-price input[type="text"] {
-  border: 1px solid #2d0b37; }
+  border: 1px solid #2d0b37;
+  font-family: Circe; }
+
+.form-price :focus:-moz-placeholder {
+  opacity: 0; }
+
+.form-price :focus:-ms-input-placeholde {
+  opacity: 0; }
+
+.form-price :focus::-moz-placeholder {
+  opacity: 0; }
+
+.form-price :focus::-webkit-input-placeholder {
+  opacity: 0; }
 
 .form-price__cards {
   color: #2d0b37;

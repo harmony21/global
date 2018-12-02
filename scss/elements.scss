@@ -436,6 +436,10 @@ a {
             font-size: 24px;
         }
     }
+    input {
+        color: #fff;
+        font-family: Circe;
+    }
     :-ms-input-placeholder {
         color: white;
         font-size: 13px;
@@ -456,6 +460,18 @@ a {
         font-size: 13px;
         font-family: Circe;
         opacity: 1;
+    }
+    :focus:-moz-placeholder {
+        opacity: 0;
+    }
+    :focus:-ms-input-placeholde {
+        opacity: 0;
+    }
+    :focus::-moz-placeholder {
+        opacity: 0;
+    }
+    :focus::-webkit-input-placeholder {
+        opacity: 0;
     }
     &__cards {
         color: white;
@@ -509,6 +525,19 @@ a {
     }
     input[type="text"] {
         border: 1px solid #2d0b37;
+        font-family: Circe;
+    }
+    :focus:-moz-placeholder {
+        opacity: 0;
+    }
+    :focus:-ms-input-placeholde {
+        opacity: 0;
+    }
+    :focus::-moz-placeholder {
+        opacity: 0;
+    }
+    :focus::-webkit-input-placeholder {
+        opacity: 0;
     }
     &__cards {
         color: #2d0b37;

@@ -67,7 +67,7 @@ html {
 body {
     font-family: Circe;
     height: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 /* Главная секция */
@@ -78,6 +78,9 @@ body {
     z-index: 110;
     position: relative;
     height: 592px;
+    @include phones {
+        height: 420px;
+    }
 }
 .header {
     display: flex;
@@ -640,7 +643,6 @@ body {
     z-index: 150;
     position: relative;
     @include phones {
-        padding-top: 350px;
         padding-bottom: 20px;
     }
     @include min-phones {
@@ -3100,7 +3102,7 @@ body {
             align-items: center;
             img {
                 margin-right: 10px;
-                margin-left: 10px;
+                margin-left: 8px;
                 &:hover {
                     cursor: pointer;
                 }
@@ -3135,6 +3137,14 @@ body {
                     width: 40px;
                 }
             }
+        }
+        &__month {
+            width: 110px;
+            text-align: center;
+        }
+        &__year {
+            width: 110px;
+            text-align: center;
         }
         &__numbers {
             list-style: none;
@@ -3256,7 +3266,7 @@ body {
             display: none;
         }
     }
-    .years {
+    .months {
         display: none;
         @include phones {
             display: flex;
@@ -4084,6 +4094,9 @@ body {
         }
         span {
             margin-left: 10px;
+            &:hover {
+                cursor: pointer;
+            }
             @include phones {
                 font-size: 14px;
                 font-weight: bold;
@@ -4110,7 +4123,6 @@ body {
     }
 }
 .time-table {
-    display: flex;
     padding: 32px 376px 50px 376px;
     background-color: #f3f3f3;
     @media screen and (max-width: 1730px) {
@@ -4133,11 +4145,26 @@ body {
             display: none;
         }
     }
+    &__top {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    &__wrap {
+        display: flex;
+        align-items: center;
+        .empty-block {
+            width: 100%;
+        }
+    }
     //стили для мобильного расписания
     &.mobile {
         display: none;
         @include phones {
-            display: flex;
+            display: block;
+        }
+        .time-table__top {
+            display: none;
         }
         .time {
             img {
@@ -4147,49 +4174,86 @@ body {
                 font-size: 14px;
             }
             &__numbers {
-                margin-top: 55px;
+                margin-top: 35px;
             }
         }
-        .week {
-            margin-left: 0;
-            width: 90%;
-            .day {
-                width: 100%;
-                &__arrows {
-                    display: flex;
-                    justify-content: center;
-                }
-                &__arrows_left, &__arrows_right {
-                    width: 10px;
-                    height: 17px;
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-                &__arrows_left {
-                    margin-right: 15px;
-                    background: url('..//images/back.png');
-                }
-                &__arrows_right {
-                    background: url('..//images/to.png');
-                }
-                &__name {
-                    border: none;
-                }
-                &__lesson {
-                    height: 110px;
-                }
+        .days-training {
+            flex-direction: column;
+        }
+        .day {
+            width: 100%;
+            &.monday {
+                margin-left: 8px;
+            }
+            &__arrows {
+                display: flex;
+                justify-content: center;
+            }
+            &__arrows_left, &__arrows_right {
+                width: 10px;
+                height: 17px;
                 &:hover {
+                    cursor: pointer;
+                }
+            }
+            &__arrows_left {
+                margin-right: 15px;
+                background: url('..//images/back.png');
+            }
+            &__arrows_right {
+                background: url('..//images/to.png');
+            }
+            &__name {
+                border: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+            &__lesson {
+                height: 110px;
+                width: 83%;
+                margin-left: 35px;
+            }
+            &:hover {
+                background-color: transparent;
+                .day__name {
                     background-color: transparent;
-                    .day__name {
-                        background-color: transparent;
-                        color: #2d0b37;
-                        border: none;
-                        border-radius: 2px solid transparent;
-                    }
+                    color: #2d0b37;
+                    border: none;
+                    border-radius: 2px solid transparent;
                 }
             }
         }
+        .bx-controls {
+            @media screen and (max-width: 550px) {
+                display: none;
+            }
+        }
+    }
+}
+.days {
+    width: 100%;
+    display: flex;
+    margin-left: 50px;
+    justify-content: space-between;
+    @media screen and (max-width: 950px) {
+        margin-left: 10px;
+    }
+    &__item {
+        width: calc(93%/7);
+        text-align: center;
+        border-bottom: 2px solid #2d0b37;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        padding: 10px 0;
+        font-weight: bold;
+        @media screen and (max-width: 950px) {
+            font-size: 14px;
+        }
+    }
+    &-training {
+        display: flex;
+        margin-top: -30px;
     }
 }
 .time {
@@ -4199,10 +4263,8 @@ body {
         }
     }
     &__numbers {
-        height: 95%;
         p {
-            height: calc(100%/3);
-            margin-top: 18px;
+            margin-top: 15px;
             font-weight: bold;
             font-size: 18px;
             @media screen and (max-width: 950px) {
@@ -4211,81 +4273,62 @@ body {
         }
     }
 }
-.week {
+.lessons {
+    margin-left: 46px;
     display: flex;
-    margin-left: 30px;
-    @media screen and (max-width: 950px) {
-        margin-left: 0px;
+    justify-content: space-between;
+}
+.day {
+    width: calc(90%/7);
+    margin-left: 8px;
+    &.monday {
+        margin-left: 83px;
+        @media screen and (max-width: 950px) {
+            margin-left: 43px;
+        }
     }
-    .day {
-        width: calc(100%/7);
-        margin-left: 8px;
+    &__lesson {
+        background-color: #fff;
+        margin-top: 15px;
+        padding: 5px;
+        border-radius: 5px;
+        height: 148px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &.active {
+            background-color: #dff8fb;
+        }
         &:hover {
-            background-color: #e4e4e4;
-            .day__name {
-                background-color: #7b398d;
-                color: #fff;
-                border: 2px solid #7b398d;
-                border-radius: 3px;
-            }
+            cursor: pointer;
         }
-        &__name {
-            text-align: center;
-            border-bottom: 2px solid #2d0b37;
-            border-top: 2px solid transparent;
-            border-left: 2px solid transparent;
-            border-right: 2px solid transparent;
-            padding: 10px 0;
+        &-name {
+            font-size: 15px;
+            font-weight: bold;
             @media screen and (max-width: 950px) {
-                font-size: 14px;
+                font-size: 13px;
             }
         }
-        &__lesson {
-            background-color: #fff;
-            margin-top: 15px;
-            padding: 5px;
-            border-radius: 5px;
-            height: 148px;
+        &-time {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            @media screen and (max-width: 785px) {
-                height: 165px;
+            font-size: 13px;
+            margin-top: 10px;
+            @media screen and (max-width: 950px) {
+                font-size: 11px;
             }
-            &.active {
-                background-color: #dff8fb;
+            img {
+                width: 13px;
+                height: 13px;
+                margin-left: 5px;
             }
-            &:hover {
-                cursor: pointer;
-            }
-            &-name {
-                font-size: 15px;
-                font-weight: bold;
-                @media screen and (max-width: 950px) {
-                    font-size: 13px;
-                }
-            }
-            &-time {
-                display: flex;
-                font-size: 13px;
-                margin-top: 10px;
-                @media screen and (max-width: 950px) {
-                    font-size: 11px;
-                }
-                img {
-                    width: 13px;
-                    height: 13px;
-                    margin-left: 5px;
-                }
-            }
-            &-hall {
-                margin-top: 15px;
-                font-size: 14px;
-                font-weight: bold;
-                margin-bottom: 10px;
-                @media screen and (max-width: 950px) {
-                    font-size: 11px;
-                }
+        }
+        &-hall {
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            @media screen and (max-width: 950px) {
+                font-size: 11px;
             }
         }
     }

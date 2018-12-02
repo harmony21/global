@@ -30,8 +30,7 @@ html {
 
 body {
   font-family: Circe;
-  height: 100%;
-  overflow-x: hidden; }
+  height: 100%; }
 
 /* Главная секция */
 .main-page {
@@ -41,6 +40,9 @@ body {
   z-index: 110;
   position: relative;
   height: 592px; }
+  @media screen and (max-width: 550px) {
+    .main-page {
+      height: 420px; } }
 
 .header {
   display: -webkit-box;
@@ -597,7 +599,6 @@ body {
   position: relative; }
   @media screen and (max-width: 550px) {
     .training {
-      padding-top: 350px;
       padding-bottom: 20px; } }
   @media screen and (max-width: 350px) {
     .training {
@@ -3080,7 +3081,7 @@ body {
       align-items: center; }
       .last-news .hide-calendar__top img, .news-more .hide-calendar__top img {
         margin-right: 10px;
-        margin-left: 10px; }
+        margin-left: 8px; }
         .last-news .hide-calendar__top img:hover, .news-more .hide-calendar__top img:hover {
           cursor: pointer; }
     .last-news .hide-calendar__date, .news-more .hide-calendar__date {
@@ -3118,6 +3119,12 @@ body {
         @media screen and (max-width: 1030px) {
           .last-news .hide-calendar__days li, .news-more .hide-calendar__days li {
             width: 40px; } }
+    .last-news .hide-calendar__month, .news-more .hide-calendar__month {
+      width: 110px;
+      text-align: center; }
+    .last-news .hide-calendar__year, .news-more .hide-calendar__year {
+      width: 110px;
+      text-align: center; }
     .last-news .hide-calendar__numbers, .news-more .hide-calendar__numbers {
       list-style: none;
       display: -webkit-box;
@@ -3216,10 +3223,10 @@ body {
     @media screen and (max-width: 550px) {
       .news-slider .block-title {
         display: none; } }
-  .news-slider .years {
+  .news-slider .months {
     display: none; }
     @media screen and (max-width: 550px) {
-      .news-slider .years {
+      .news-slider .months {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -4018,6 +4025,8 @@ body {
       margin-left: 0; }
     .markers-item span {
       margin-left: 10px; }
+      .markers-item span:hover {
+        cursor: pointer; }
       @media screen and (max-width: 550px) {
         .markers-item span {
           font-size: 14px;
@@ -4038,9 +4047,6 @@ body {
       background-color: #dff8fb; }
 
 .time-table {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding: 32px 376px 50px 376px;
   background-color: #f3f3f3; }
   @media screen and (max-width: 1730px) {
@@ -4061,146 +4067,187 @@ body {
   @media screen and (max-width: 550px) {
     .time-table.desktop {
       display: none; } }
+  .time-table__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%; }
+  .time-table__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .time-table__wrap .empty-block {
+      width: 100%; }
   .time-table.mobile {
     display: none; }
     @media screen and (max-width: 550px) {
       .time-table.mobile {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex; } }
+        display: block; } }
+    .time-table.mobile .time-table__top {
+      display: none; }
     .time-table.mobile .time img {
       display: none; }
     .time-table.mobile .time p {
       font-size: 14px; }
     .time-table.mobile .time__numbers {
-      margin-top: 55px; }
-    .time-table.mobile .week {
-      margin-left: 0;
-      width: 90%; }
-      .time-table.mobile .week .day {
-        width: 100%; }
-        .time-table.mobile .week .day__arrows {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center; }
-        .time-table.mobile .week .day__arrows_left, .time-table.mobile .week .day__arrows_right {
-          width: 10px;
-          height: 17px; }
-          .time-table.mobile .week .day__arrows_left:hover, .time-table.mobile .week .day__arrows_right:hover {
-            cursor: pointer; }
-        .time-table.mobile .week .day__arrows_left {
-          margin-right: 15px;
-          background: url("..//images/back.png"); }
-        .time-table.mobile .week .day__arrows_right {
-          background: url("..//images/to.png"); }
-        .time-table.mobile .week .day__name {
-          border: none; }
-        .time-table.mobile .week .day__lesson {
-          height: 110px; }
-        .time-table.mobile .week .day:hover {
-          background-color: transparent; }
-          .time-table.mobile .week .day:hover .day__name {
-            background-color: transparent;
-            color: #2d0b37;
-            border: none;
-            border-radius: 2px solid transparent; }
+      margin-top: 35px; }
+    .time-table.mobile .days-training {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+    .time-table.mobile .day {
+      width: 100%; }
+      .time-table.mobile .day.monday {
+        margin-left: 8px; }
+      .time-table.mobile .day__arrows {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+      .time-table.mobile .day__arrows_left, .time-table.mobile .day__arrows_right {
+        width: 10px;
+        height: 17px; }
+        .time-table.mobile .day__arrows_left:hover, .time-table.mobile .day__arrows_right:hover {
+          cursor: pointer; }
+      .time-table.mobile .day__arrows_left {
+        margin-right: 15px;
+        background: url("..//images/back.png"); }
+      .time-table.mobile .day__arrows_right {
+        background: url("..//images/to.png"); }
+      .time-table.mobile .day__name {
+        border: none;
+        text-align: center;
+        margin-top: 10px; }
+      .time-table.mobile .day__lesson {
+        height: 110px;
+        width: 83%;
+        margin-left: 35px; }
+      .time-table.mobile .day:hover {
+        background-color: transparent; }
+        .time-table.mobile .day:hover .day__name {
+          background-color: transparent;
+          color: #2d0b37;
+          border: none;
+          border-radius: 2px solid transparent; }
+    @media screen and (max-width: 550px) {
+      .time-table.mobile .bx-controls {
+        display: none; } }
+
+.days {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 50px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media screen and (max-width: 950px) {
+    .days {
+      margin-left: 10px; } }
+  .days__item {
+    width: calc(93%/7);
+    text-align: center;
+    border-bottom: 2px solid #2d0b37;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    padding: 10px 0;
+    font-weight: bold; }
+    @media screen and (max-width: 950px) {
+      .days__item {
+        font-size: 14px; } }
+  .days-training {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: -30px; }
 
 @media screen and (max-width: 950px) {
   .time img {
     width: 25px; } }
 
-.time__numbers {
-  height: 95%; }
-  .time__numbers p {
-    height: calc(100%/3);
-    margin-top: 18px;
-    font-weight: bold;
-    font-size: 18px; }
-    @media screen and (max-width: 950px) {
-      .time__numbers p {
-        font-size: 14px; } }
+.time__numbers p {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px; }
+  @media screen and (max-width: 950px) {
+    .time__numbers p {
+      font-size: 14px; } }
 
-.week {
+.lessons {
+  margin-left: 46px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 30px; }
-  @media screen and (max-width: 950px) {
-    .week {
-      margin-left: 0px; } }
-  .week .day {
-    width: calc(100%/7);
-    margin-left: 8px; }
-    .week .day:hover {
-      background-color: #e4e4e4; }
-      .week .day:hover .day__name {
-        background-color: #7b398d;
-        color: #fff;
-        border: 2px solid #7b398d;
-        border-radius: 3px; }
-    .week .day__name {
-      text-align: center;
-      border-bottom: 2px solid #2d0b37;
-      border-top: 2px solid transparent;
-      border-left: 2px solid transparent;
-      border-right: 2px solid transparent;
-      padding: 10px 0; }
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.day {
+  width: calc(90%/7);
+  margin-left: 8px; }
+  .day.monday {
+    margin-left: 83px; }
+    @media screen and (max-width: 950px) {
+      .day.monday {
+        margin-left: 43px; } }
+  .day__lesson {
+    background-color: #fff;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 148px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .day__lesson.active {
+      background-color: #dff8fb; }
+    .day__lesson:hover {
+      cursor: pointer; }
+    .day__lesson-name {
+      font-size: 15px;
+      font-weight: bold; }
       @media screen and (max-width: 950px) {
-        .week .day__name {
-          font-size: 14px; } }
-    .week .day__lesson {
-      background-color: #fff;
-      margin-top: 15px;
-      padding: 5px;
-      border-radius: 5px;
-      height: 148px;
+        .day__lesson-name {
+          font-size: 13px; } }
+    .day__lesson-time {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      @media screen and (max-width: 785px) {
-        .week .day__lesson {
-          height: 165px; } }
-      .week .day__lesson.active {
-        background-color: #dff8fb; }
-      .week .day__lesson:hover {
-        cursor: pointer; }
-      .week .day__lesson-name {
-        font-size: 15px;
-        font-weight: bold; }
-        @media screen and (max-width: 950px) {
-          .week .day__lesson-name {
-            font-size: 13px; } }
-      .week .day__lesson-time {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        font-size: 13px;
-        margin-top: 10px; }
-        @media screen and (max-width: 950px) {
-          .week .day__lesson-time {
-            font-size: 11px; } }
-        .week .day__lesson-time img {
-          width: 13px;
-          height: 13px;
-          margin-left: 5px; }
-      .week .day__lesson-hall {
-        margin-top: 15px;
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 10px; }
-        @media screen and (max-width: 950px) {
-          .week .day__lesson-hall {
-            font-size: 11px; } }
+      font-size: 13px;
+      margin-top: 10px; }
+      @media screen and (max-width: 950px) {
+        .day__lesson-time {
+          font-size: 11px; } }
+      .day__lesson-time img {
+        width: 13px;
+        height: 13px;
+        margin-left: 5px; }
+    .day__lesson-hall {
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px; }
+      @media screen and (max-width: 950px) {
+        .day__lesson-hall {
+          font-size: 11px; } }
 
 .hide-content-lesson {
   color: #2d0b37;
