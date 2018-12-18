@@ -93,6 +93,7 @@ $(document).ready(function() {
   };
 
   var linkID = getUrlParameter('id');
+  console.log(linkID);
   if (linkID !== undefined) {
     var newsItems = $('.news-calendar-item');
     var newsItem = newsItems.index($('.news-calendar-item[id='+linkID+']'));

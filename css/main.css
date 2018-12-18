@@ -30,7 +30,8 @@ html {
 
 body {
   font-family: Circe;
-  height: 100%; }
+  height: 100%;
+  overflow-x: hidden; }
 
 /* Главная секция */
 .main-page {
@@ -43,6 +44,9 @@ body {
   @media screen and (max-width: 550px) {
     .main-page {
       height: 420px; } }
+  @media screen and (max-width: 350px) {
+    .main-page {
+      height: 240px; } }
 
 .header {
   display: -webkit-box;
@@ -330,7 +334,7 @@ body {
   left: 0;
   height: 100%;
   background: rgba(54, 26, 61, 0.95);
-  z-index: 20;
+  z-index: 500;
   padding: 60px 25px 0 10px; }
   .mobile-menu__list {
     list-style: none;
@@ -464,7 +468,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 592px;
     background: url("..//images/back-top.png") center center no-repeat; }
     @media screen and (max-width: 550px) {
@@ -561,10 +565,32 @@ body {
 .left-arrow {
   background: url("..//images/arrow-left-active.png");
   left: 2%; }
+  .left-arrow--trainings, .left-arrow--trainings-2, .left-arrow--trainings-3, .left-arrow--trainings-4, .left-arrow--background, .left-arrow--trainings-5, .left-arrow--trainings-6, .left-arrow--trainings-7, .left-arrow--trainings-8 {
+    width: 32px;
+    height: 57px;
+    position: absolute;
+    z-index: 500;
+    top: 25%;
+    left: -45px;
+    background: url("..//images/arrow-left-violet.png"); }
+    @media screen and (max-width: 550px) {
+      .left-arrow--trainings, .left-arrow--trainings-2, .left-arrow--trainings-3, .left-arrow--trainings-4, .left-arrow--background, .left-arrow--trainings-5, .left-arrow--trainings-6, .left-arrow--trainings-7, .left-arrow--trainings-8 {
+        display: none; } }
 
 .right-arrow {
   background: url("..//images/arrow-right-active.png");
   right: 2%; }
+  .right-arrow--trainings, .right-arrow--trainings-2, .right-arrow--trainings-3, .right-arrow--trainings-4, .right-arrow--background, .right-arrow--trainings-5, .right-arrow--trainings-6, .right-arrow--trainings-7, .right-arrow--trainings-8 {
+    width: 32px;
+    height: 57px;
+    position: absolute;
+    z-index: 500;
+    top: 25%;
+    right: -45px;
+    background: url("..//images/arrow-right-violet.png"); }
+    @media screen and (max-width: 550px) {
+      .right-arrow--trainings, .right-arrow--trainings-2, .right-arrow--trainings-3, .right-arrow--trainings-4, .right-arrow--background, .right-arrow--trainings-5, .right-arrow--trainings-6, .right-arrow--trainings-7, .right-arrow--trainings-8 {
+        display: none; } }
 
 /* Знакомство с Global */
 .meeting {
@@ -602,7 +628,7 @@ body {
       padding-bottom: 20px; } }
   @media screen and (max-width: 350px) {
     .training {
-      padding: 200px 0 10px 0; } }
+      padding: 20px 0 10px 0; } }
   .training__top {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3348,12 +3374,6 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    @media screen and (max-width: 1366px) {
-      .news-more .photos-wrap img {
-        width: 100%; } }
-    @media screen and (max-width: 550px) {
-      .news-more .photos-wrap img {
-        width: 50%; } }
 
 .comments {
   padding: 60px 376px 50px 376px; }
@@ -3974,31 +3994,80 @@ body {
     margin-top: 40px; }
     @media screen and (max-width: 550px) {
       .lesson-way__filter {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
         margin-top: 10px; } }
+  .lesson-way__item {
+    position: relative;
+    z-index: 10;
+    margin-left: 20px; }
+    @media screen and (max-width: 550px) {
+      .lesson-way__item {
+        margin-left: 0; } }
+    .lesson-way__item:first-child {
+      margin-left: 0; }
+    @media screen and (min-width: 551px) {
+      .lesson-way__item:hover .lesson-way__list {
+        display: block; } }
+  @media screen and (min-width: 551px) and (max-width: 550px) {
+    .lesson-way__item:hover .lesson-way__list {
+      display: none; } }
+    @media screen and (min-width: 551px) {
+      .lesson-way__item:hover .lesson-way__link {
+        color: #fff;
+        background-color: #7b398d;
+        border: 1px solid #7b398d;
+        border-radius: 5px 5px 0 0; } }
+  @media screen and (min-width: 551px) and (max-width: 550px) {
+    .lesson-way__item:hover .lesson-way__link {
+      border-radius: 5px; } }
+  .lesson-way__list {
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+    @media screen and (max-width: 550px) {
+      .lesson-way__list {
+        position: relative;
+        display: block; } }
+    .lesson-way__list li {
+      font-size: 14px;
+      text-align: center;
+      background-color: rgba(123, 57, 141, 0.9);
+      color: #fff;
+      padding: 8px 0; }
+      @media screen and (max-width: 550px) {
+        .lesson-way__list li {
+          background-color: transparent;
+          color: #2d0b37;
+          text-align: left; } }
+      .lesson-way__list li:hover {
+        cursor: pointer;
+        background-color: #6b327b; }
+        @media screen and (max-width: 550px) {
+          .lesson-way__list li:hover {
+            background-color: rgba(123, 57, 141, 0.3); } }
   .lesson-way__link {
     border: 1px solid #2d0b37;
     border-radius: 5px;
-    display: block;
     width: 186px;
     color: #2d0b37;
     padding: 10px 0;
     text-align: center;
-    margin-right: 20px;
     font-weight: bold; }
     .lesson-way__link:hover {
+      cursor: pointer; }
+    .lesson-way__link.active {
       color: #fff;
       background-color: #7b398d;
       border: 1px solid #7b398d; }
-    .lesson-way__link:last-child {
-      margin-right: 0; }
     @media screen and (max-width: 550px) {
       .lesson-way__link {
-        width: 48%;
+        width: 100%;
         margin-top: 5px;
         margin-right: 0; } }
     @media screen and (max-width: 350px) {
@@ -4025,8 +4094,6 @@ body {
       margin-left: 0; }
     .markers-item span {
       margin-left: 10px; }
-      .markers-item span:hover {
-        cursor: pointer; }
       @media screen and (max-width: 550px) {
         .markers-item span {
           font-size: 14px;
@@ -4358,3 +4425,205 @@ body {
         font-weight: bold; } }
     .hide-content-lesson__link:hover {
       background-color: #6b327b; }
+
+.trainings {
+  margin: 60px 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  @media screen and (max-width: 1730px) {
+    .trainings {
+      margin: 60px 100px; } }
+  @media screen and (max-width: 1366px) {
+    .trainings {
+      margin: 60px 20px; } }
+  @media screen and (max-width: 550px) {
+    .trainings {
+      margin: 15px; } }
+  .trainings__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    @media screen and (max-width: 750px) {
+      .trainings__wrap {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; } }
+  .trainings__item {
+    position: relative;
+    width: calc(100%/3);
+    margin-bottom: 30px; }
+    @media screen and (max-width: 750px) {
+      .trainings__item {
+        width: calc(95%/2); } }
+    @media screen and (max-width: 550px) {
+      .trainings__item {
+        margin-bottom: 0; } }
+  .trainings__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 450px;
+    height: 287px;
+    overflow: hidden; }
+    @media screen and (max-width: 750px) {
+      .trainings__img {
+        width: 100%;
+        height: auto; }
+        .trainings__img img {
+          width: 100%;
+          height: 100%; } }
+    .trainings__img img {
+      -webkit-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s; }
+  .trainings__line {
+    width: 75px;
+    border: 2px solid #2d0b37;
+    margin: 32px 0 20px 36px;
+    -ms-flex-item-align: start;
+    align-self: flex-start; }
+    @media screen and (max-width: 1080px) {
+      .trainings__line {
+        margin: 20px 0 10px 10px; } }
+    @media screen and (max-width: 750px) {
+      .trainings__line {
+        border: 1px solid #2d0b37;
+        margin: 10px 0 10px 2px; } }
+  .trainings__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: 0.4 ease-in-out;
+    -o-transition: 0.4 ease-in-out;
+    transition: 0.4 ease-in-out;
+    overflow: hidden;
+    padding: 8px 2px; }
+    .trainings__link:hover {
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+      .trainings__link:hover img {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
+  .trainings__title {
+    color: #2d0b37;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: Circe-Bold;
+    margin-left: 36px;
+    width: 300px;
+    -ms-flex-item-align: start;
+    align-self: flex-start; }
+    @media screen and (max-width: 1080px) {
+      .trainings__title {
+        margin-left: 10px;
+        font-size: 14px;
+        width: 220px; } }
+    @media screen and (max-width: 750px) {
+      .trainings__title {
+        width: 100%;
+        font-size: 12px;
+        margin-left: 2px; } }
+    @media screen and (max-width: 550px) {
+      .trainings__title {
+        font-size: 10px; } }
+  .trainings .back {
+    width: 100%;
+    padding: 0; }
+  .trainings .mobile-title {
+    padding: 15px 0; }
+
+.training-more {
+  font-family: Circe;
+  width: 885px;
+  display: none; }
+  .training-more__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .training-more__content {
+    margin-top: 30px; }
+  .training-more__img {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden; }
+    @media screen and (max-width: 550px) {
+      .training-more__img {
+        height: auto; } }
+    .training-more__img img {
+      width: 100%; }
+      @media screen and (max-width: 550px) {
+        .training-more__img img {
+          height: 100%; } }
+  .training-more__desc {
+    padding: 30px 60px;
+    background-color: #fff; }
+    @media screen and (max-width: 550px) {
+      .training-more__desc {
+        padding: 20px 10px; } }
+  .training-more__title {
+    font-size: 24px;
+    text-transform: uppercase; }
+    @media screen and (max-width: 550px) {
+      .training-more__title {
+        font-size: 16px; } }
+  .training-more__sign-up {
+    background-color: #7b398d;
+    display: block;
+    width: 176px;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-radius: 5px; }
+    @media screen and (max-width: 550px) {
+      .training-more__sign-up {
+        font-size: 14px;
+        width: 100px; } }
+    .training-more__sign-up:hover {
+      background-color: #6b327b; }
+  .training-more__text {
+    margin-top: 20px;
+    color: #2d0b37; }
+    @media screen and (max-width: 550px) {
+      .training-more__text {
+        font-size: 13px; } }
+  .training-more__subtitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 20px; }
+    @media screen and (max-width: 550px) {
+      .training-more__subtitle {
+        font-size: 14px;
+        margin-top: 10px; } }
+  .training-more__slider {
+    position: relative;
+    margin-top: 20px; }
+    .training-more__slider .lSSlideOuter .lSPager {
+      display: none; }
+      .training-more__slider .lSSlideOuter .lSPager li.active a {
+        background-color: #7b398d !important; }
+      @media screen and (max-width: 550px) {
+        .training-more__slider .lSSlideOuter .lSPager {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex; } }

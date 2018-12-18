@@ -67,7 +67,7 @@ html {
 body {
     font-family: Circe;
     height: 100%;
-    // overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 /* Главная секция */
@@ -80,6 +80,9 @@ body {
     height: 592px;
     @include phones {
         height: 420px;
+    }
+    @include min-phones {
+        height: 240px;
     }
 }
 .header {
@@ -364,7 +367,7 @@ body {
     left: 0;
     height: 100%; 
     background: rgba(54, 26, 61, 0.95);
-    z-index: 20;
+    z-index: 500;
     padding: 60px 25px 0 10px;
     &__list {
         list-style: none;
@@ -500,7 +503,7 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
+        width: 100%;
         height: 592px;
         background: url('..//images/back-top.png') center center no-repeat; 
         @include phones {
@@ -603,10 +606,36 @@ body {
 .left-arrow {
     background: url('..//images/arrow-left-active.png');
     left: 2%;
+    &--trainings, &--trainings-2, &--trainings-3, &--trainings-4, &--background,
+    &--trainings-5, &--trainings-6, &--trainings-7, &--trainings-8 {
+        width: 32px;
+        height: 57px;
+        position: absolute;
+        z-index: 500;
+        top: 25%;
+        left: -45px;
+        background: url('..//images/arrow-left-violet.png');
+        @media screen and (max-width: 550px) {
+            display: none;
+        }
+    }
 }
 .right-arrow {
     background: url('..//images/arrow-right-active.png');
     right: 2%;
+    &--trainings, &--trainings-2, &--trainings-3, &--trainings-4, &--background,
+    &--trainings-5, &--trainings-6, &--trainings-7, &--trainings-8 {
+        width: 32px;
+        height: 57px;
+        position: absolute;
+        z-index: 500;
+        top: 25%;
+        right: -45px;
+        background: url('..//images/arrow-right-violet.png');
+        @media screen and (max-width: 550px) {
+            display: none;
+        }
+    }
 }
 
 /* Знакомство с Global */
@@ -646,7 +675,7 @@ body {
         padding-bottom: 20px;
     }
     @include min-phones {
-        padding: 200px 0 10px 0;
+        padding: 20px 0 10px 0;
     }
     &__top {
         display: flex;
@@ -3389,14 +3418,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        img {
-            @include laptop {
-                width: 100%;
-            }
-            @include phones {
-                width: 50%;
-            }
-        }
     }
 }
 .comments {
@@ -4047,31 +4068,89 @@ body {
         display: flex;
         margin-top: 40px;
         @include phones {
-            flex-wrap: wrap;
-            justify-content: space-between;
+            flex-direction: column;
             margin-top: 10px;
+        }
+    }
+    &__item {
+        position: relative;
+        z-index: 10;
+        margin-left: 20px;
+        @include phones {
+            margin-left: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        @media screen and (min-width: 551px) {
+            &:hover {
+                .lesson-way__list {
+                    display: block;
+                    @include phones {
+                        display: none;
+                    }
+                }
+                .lesson-way__link {
+                    color: #fff;
+                    background-color: #7b398d;
+                    border: 1px solid #7b398d;
+                    border-radius: 5px 5px 0 0;
+                    @include phones {
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+    &__list {
+        display: none;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        @include phones {
+            position: relative;
+            display: block;
+        }
+        li {
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(123, 57, 141, 0.9);
+            color: #fff;
+            padding: 8px 0;
+            @include phones {
+                background-color: transparent;
+                color: #2d0b37;
+                text-align: left;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: darken(#7b398d, 5);
+                @include phones {
+                    background-color: rgba(123, 57, 141, 0.3);
+                }
+            }
         }
     }
     &__link {
         border: 1px solid #2d0b37;
         border-radius: 5px;
-        display: block;
         width: 186px;
         color: #2d0b37;
         padding: 10px 0;
         text-align: center;
-        margin-right: 20px;
         font-weight: bold;
         &:hover {
+            cursor: pointer;
+        }
+        &.active {
             color: #fff;
             background-color: #7b398d;
             border: 1px solid #7b398d;
         }
-        &:last-child {
-            margin-right: 0;
-        }
         @include phones {
-            width: 48%;
+            width: 100%;
             margin-top: 5px;
             margin-right: 0;
         }
@@ -4094,9 +4173,6 @@ body {
         }
         span {
             margin-left: 10px;
-            &:hover {
-                cursor: pointer;
-            }
             @include phones {
                 font-size: 14px;
                 font-weight: bold;
@@ -4433,6 +4509,202 @@ body {
         }
         &:hover {
             background-color: darken(#7b398d, 5);
+        }
+    }
+}
+//страница "Тренировки"
+.trainings {
+    margin: 60px 270px;
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: 1730px) {
+        margin: 60px 100px
+    }
+    @include laptop {
+        margin: 60px 20px;
+    }
+    @include phones {
+        margin: 15px;
+    }
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: 750px) {
+            justify-content: space-between;
+        }
+    }
+    &__item {
+        position: relative;
+        width: calc(100%/3);
+        margin-bottom: 30px;
+        @media screen and (max-width: 750px) {
+            width: calc(95%/2);
+        }
+        @media screen and (max-width: 550px) {
+            margin-bottom: 0;
+        }
+    }
+    &__img {
+        display: flex;
+        width: 450px;
+        height: 287px;
+        overflow: hidden;
+        @media screen and (max-width: 750px) {
+            width: 100%;
+            height: auto;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        img {
+            transition: 0.4s;
+        }
+    }
+    &__line {
+        width: 75px;
+        border: 2px solid #2d0b37;
+        margin: 32px 0 20px 36px;
+        align-self: flex-start;
+        @media screen and (max-width: 1080px) {
+            margin: 20px 0 10px 10px;
+        }
+        @media screen and (max-width: 750px) {
+            border: 1px solid #2d0b37;
+            margin: 10px 0 10px 2px;
+        }
+    }
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.4 ease-in-out;
+        overflow: hidden;
+        padding: 8px 2px;
+        &:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__title {
+        color: #2d0b37;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: Circe-Bold;
+        margin-left: 36px;
+        width: 300px;
+        align-self: flex-start;
+        @media screen and (max-width: 1080px) {
+            margin-left: 10px;
+            font-size: 14px;
+            width: 220px;
+        }
+        @media screen and (max-width: 750px) {
+            width: 100%;
+            font-size: 12px;
+            margin-left: 2px;
+        }
+        @media screen and (max-width: 550px) {
+            font-size: 10px;
+        }
+    }
+    .back {
+        width: 100%;
+        padding: 0;
+    }
+    .mobile-title {
+        padding: 15px 0;
+    }
+}
+.training-more {
+    font-family: Circe;
+    width: 885px;
+    display: none;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__content {
+        margin-top: 30px;
+    }
+    &__img {
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        @media screen and (max-width: 550px) {
+            height: auto;
+        }
+        img {
+            width: 100%;
+            @media screen and (max-width: 550px) {
+                height: 100%;
+            }
+        }
+    }
+    &__desc {
+        padding: 30px 60px;
+        background-color: #fff;
+        @media screen and (max-width: 550px) {
+            padding: 20px 10px;
+        }
+    }
+    &__title {
+        font-size: 24px;
+        text-transform: uppercase;
+        @media screen and (max-width: 550px) {
+            font-size: 16px;
+        }
+    }
+    &__sign-up {
+        background-color: #7b398d;
+        display: block;
+        width: 176px;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        border-radius: 5px;
+        @media screen and (max-width: 550px) {
+            font-size: 14px;
+            width: 100px;
+        }
+        &:hover {
+            background-color: darken(#7b398d, 5);
+        }
+    }
+    &__text {
+        margin-top: 20px;
+        color: #2d0b37;
+        @media screen and (max-width: 550px) {
+            font-size: 13px;
+        }
+    }
+    &__subtitle {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-top: 20px;
+        @media screen and (max-width: 550px) {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+    &__slider {
+        position: relative;
+        margin-top: 20px;
+        .lSSlideOuter .lSPager {
+            display: none;
+            li {
+                &.active {
+                    a {
+                        background-color: #7b398d !important;
+                    }
+                }
+            }
+            @media screen and (max-width: 550px) {
+                display: flex;
+            }
         }
     }
 }

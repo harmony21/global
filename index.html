@@ -10,6 +10,7 @@
         <link href="css/elements.css" type="text/css" rel="stylesheet" /> 
         <link rel="stylesheet" href="owl-carousel/owl.carousel.css"/>
         <link rel="stylesheet" href="css/slider-pro.css"/>
+        <link href="css/jquery.fancybox.css" type="text/css" rel="stylesheet" /> 
     </head>
     <body>
         <!-- Первая секция -->
@@ -128,62 +129,191 @@
                     <div class="train-arrow-right" id="js-next"></div>
                     <h3 class="block-title">Популярные тренировки</h3>
                 </div>
-                <a href="#" class="link">Все тренировки</a>
+                <a href="html/training.html" class="link">Все тренировки</a>
             </div>
             <hr color="#7b3a8e" class="hr-violet">
             <div class="training__content" id="carousel">
                 <div class="container">
-                    <div class="training__item carousel-element">
+                    <div class="training__item carousel-element" data-src="#modal-window-training"
+                        data-item-desc="На втором этаже клуба располагается аквазона. 
+                        Она вмещает пять различных бассейнов"
+                        data-subtitle1="Большой плавательный бассейн"
+                        data-subtitle2="Бассейн для детей грудничкового возраста"
+                        data-subtitle2-desc="Благодаря ему младенцы могут эффективно и безопасно знакомиться 
+                        с водной средой, осваивать навыки плавания. Этот бассейн оборудован специальным покрытием 
+                        для профилактики плоскостопия."
+                        data-subtitle3="Средний бассейн (для детей от 3-12 лет)"
+                        data-subtitle3-desc="Занятия с квалифицированными тренерами помогут детям усовершенствовать 
+                        навыки плавания и в игровой форме овладеть водной средой.
+                        Напротив детской зоны работает бассейн для взрослых на 4 дорожки для свободного плавания 
+                        и занятий аква-аэробикой с использованием различного водного инвентаря."
+                        data-subtitle4="Водные процедуры - нужен заголовок"
+                        data-subtitle4-desc="Гидромассажные SPA, финские сауны, выложенные гималайской 
+                        каменной солью. Сауна - это и релаксация после тренировок, и мощный восстановительный 
+                        заряд для всего организма.">
                         <img src="images/train4.png" alt="" class="training__img">
-                        <a href="#" class="training__link">
+                        <a href="" class="training__link" data-item-title="Тренировка с тренером в аква-зоне">
                             <hr color="white">
                             Тренировка с тренером в аква-зоне
                         </a>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="training__item carousel-element">
+                    <div class="training__item carousel-element" data-src="#modal-window-training"
+                        data-item-desc="На втором этаже клуба располагается аквазона. 
+                        Она вмещает пять различных бассейнов"
+                        data-subtitle1="Большой плавательный бассейн"
+                        data-subtitle2="Бассейн для детей грудничкового возраста"
+                        data-subtitle2-desc="Благодаря ему младенцы могут эффективно и безопасно знакомиться 
+                        с водной средой, осваивать навыки плавания. Этот бассейн оборудован специальным покрытием 
+                        для профилактики плоскостопия."
+                        data-subtitle3="Средний бассейн (для детей от 3-12 лет)"
+                        data-subtitle3-desc="Занятия с квалифицированными тренерами помогут детям усовершенствовать 
+                        навыки плавания и в игровой форме овладеть водной средой.
+                        Напротив детской зоны работает бассейн для взрослых на 4 дорожки для свободного плавания 
+                        и занятий аква-аэробикой с использованием различного водного инвентаря."
+                        data-subtitle4="Водные процедуры - нужен заголовок"
+                        data-subtitle4-desc="Гидромассажные SPA, финские сауны, выложенные гималайской 
+                        каменной солью. Сауна - это и релаксация после тренировок, и мощный восстановительный 
+                        заряд для всего организма.">
                         <img src="images/train2.png" alt="" class="training__img">
-                        <a href="#" class="training__link">
+                        <a href="" class="training__link" data-item-title="Персональная тренировка по йоге в полете">
                             <hr color="white">
-                            Тренировка с тренером в аква-зоне
+                            Персональная тренировка по йоге в полете
                         </a>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="training__item carousel-element">
+                    <div class="training__item carousel-element" data-src="#modal-window-training"
+                        data-item-desc="На втором этаже клуба располагается аквазона. 
+                        Она вмещает пять различных бассейнов"
+                        data-subtitle1="Большой плавательный бассейн"
+                        data-subtitle2="Бассейн для детей грудничкового возраста"
+                        data-subtitle2-desc="Благодаря ему младенцы могут эффективно и безопасно знакомиться 
+                        с водной средой, осваивать навыки плавания. Этот бассейн оборудован специальным покрытием 
+                        для профилактики плоскостопия."
+                        data-subtitle3="Средний бассейн (для детей от 3-12 лет)"
+                        data-subtitle3-desc="Занятия с квалифицированными тренерами помогут детям усовершенствовать 
+                        навыки плавания и в игровой форме овладеть водной средой.
+                        Напротив детской зоны работает бассейн для взрослых на 4 дорожки для свободного плавания 
+                        и занятий аква-аэробикой с использованием различного водного инвентаря."
+                        data-subtitle4="Водные процедуры - нужен заголовок"
+                        data-subtitle4-desc="Гидромассажные SPA, финские сауны, выложенные гималайской 
+                        каменной солью. Сауна - это и релаксация после тренировок, и мощный восстановительный 
+                        заряд для всего организма.">
                         <img src="images/train4.png" alt="" class="training__img">
-                        <a href="#" class="training__link">
+                        <a href="" class="training__link" data-item-title="Тренировка с тренером в аква-зоне">
                             <hr color="white">
                             Тренировка с тренером в аква-зоне
                         </a>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="training__item carousel-element">
+                    <div class="training__item carousel-element" data-src="#modal-window-training"
+                    data-item-desc="На втором этаже клуба располагается аквазона. 
+                    Она вмещает пять различных бассейнов"
+                    data-subtitle1="Большой плавательный бассейн"
+                    data-subtitle2="Бассейн для детей грудничкового возраста"
+                    data-subtitle2-desc="Благодаря ему младенцы могут эффективно и безопасно знакомиться 
+                    с водной средой, осваивать навыки плавания. Этот бассейн оборудован специальным покрытием 
+                    для профилактики плоскостопия."
+                    data-subtitle3="Средний бассейн (для детей от 3-12 лет)"
+                    data-subtitle3-desc="Занятия с квалифицированными тренерами помогут детям усовершенствовать 
+                    навыки плавания и в игровой форме овладеть водной средой.
+                    Напротив детской зоны работает бассейн для взрослых на 4 дорожки для свободного плавания 
+                    и занятий аква-аэробикой с использованием различного водного инвентаря."
+                    data-subtitle4="Водные процедуры - нужен заголовок"
+                    data-subtitle4-desc="Гидромассажные SPA, финские сауны, выложенные гималайской 
+                    каменной солью. Сауна - это и релаксация после тренировок, и мощный восстановительный 
+                    заряд для всего организма.">
                         <img src="images/train3.png" alt="" class="training__img">
-                        <a href="#" class="training__link">
+                        <a href="" class="training__link" data-item-title="Персональная тренировка по боксу">
                             <hr color="white">
-                            Тренировка с тренером в аква-зоне
+                            Персональная тренировка по боксу
                         </a>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="training__item carousel-element">
+                    <div class="training__item carousel-element" data-src="#modal-window-training"
+                    data-item-desc="На втором этаже клуба располагается аквазона. 
+                    Она вмещает пять различных бассейнов"
+                    data-subtitle1="Большой плавательный бассейн"
+                    data-subtitle2="Бассейн для детей грудничкового возраста"
+                    data-subtitle2-desc="Благодаря ему младенцы могут эффективно и безопасно знакомиться 
+                    с водной средой, осваивать навыки плавания. Этот бассейн оборудован специальным покрытием 
+                    для профилактики плоскостопия."
+                    data-subtitle3="Средний бассейн (для детей от 3-12 лет)"
+                    data-subtitle3-desc="Занятия с квалифицированными тренерами помогут детям усовершенствовать 
+                    навыки плавания и в игровой форме овладеть водной средой.
+                    Напротив детской зоны работает бассейн для взрослых на 4 дорожки для свободного плавания 
+                    и занятий аква-аэробикой с использованием различного водного инвентаря."
+                    data-subtitle4="Водные процедуры - нужен заголовок"
+                    data-subtitle4-desc="Гидромассажные SPA, финские сауны, выложенные гималайской 
+                    каменной солью. Сауна - это и релаксация после тренировок, и мощный восстановительный 
+                    заряд для всего организма.">
                         <img src="images/train1.png" alt="" class="training__img">
-                        <a href="#" class="training__link">
+                        <a href="" class="training__link" data-item-title="Тренировка с тренером в аква-зоне">
                             <hr color="white">
                             Тренировка с тренером в аква-зоне
                         </a>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="training__item carousel-element">
+                    <div class="training__item carousel-element" data-src="#modal-window-training"
+                    data-item-desc="На втором этаже клуба располагается аквазона. 
+                    Она вмещает пять различных бассейнов"
+                    data-subtitle1="Большой плавательный бассейн"
+                    data-subtitle2="Бассейн для детей грудничкового возраста"
+                    data-subtitle2-desc="Благодаря ему младенцы могут эффективно и безопасно знакомиться 
+                    с водной средой, осваивать навыки плавания. Этот бассейн оборудован специальным покрытием 
+                    для профилактики плоскостопия."
+                    data-subtitle3="Средний бассейн (для детей от 3-12 лет)"
+                    data-subtitle3-desc="Занятия с квалифицированными тренерами помогут детям усовершенствовать 
+                    навыки плавания и в игровой форме овладеть водной средой.
+                    Напротив детской зоны работает бассейн для взрослых на 4 дорожки для свободного плавания 
+                    и занятий аква-аэробикой с использованием различного водного инвентаря."
+                    data-subtitle4="Водные процедуры - нужен заголовок"
+                    data-subtitle4-desc="Гидромассажные SPA, финские сауны, выложенные гималайской 
+                    каменной солью. Сауна - это и релаксация после тренировок, и мощный восстановительный 
+                    заряд для всего организма.">
                         <img src="images/train2.png" alt="" class="training__img">
-                        <a href="#" class="training__link">
+                        <a href="" class="training__link" data-item-title="Тренировка с тренером в аква-зоне">
                             <hr color="white">
                             Тренировка с тренером в аква-зоне
                         </a>
+                    </div>
+                </div>
+                <!-- Модальное окно -->
+                <div id="modal-window-training" class="training-more">
+                    <div class="training-more__top">
+                        <img src="..//images/logo.png" alt="">
+                        <img src="..//images/close.png" alt="" class="training-more__close">
+                    </div>
+                    <div class="training-more__content">
+                        <div class="training-more__img">
+                            <img src="..//images/training-main.png" alt="">
+                        </div>
+                        <div class="training-more__desc">
+                            <h3 class="training-more__title"></h3>
+                            <a href="#" class="training-more__sign-up">Записаться</a>
+                            <p class="training-more__text"></p>
+                            <div class="training-more__block">
+                                <h5 class="training-more__subtitle" id="subtitle1"></h5>     
+                            </div>
+                            <div class="training-more__block">
+                                <h5 class="training-more__subtitle" id="subtitle2"></h5>  
+                                <p class="training-more__text" id="subtitle2-text"></p>        
+                            </div>
+                            <div class="training-more__block">
+                                <h5 class="training-more__subtitle" id="subtitle3"></h5>  
+                                <p class="training-more__text" id="subtitle3-text"></p>    
+                            </div>
+                            <div class="training-more__block">
+                                <h5 class="training-more__subtitle" id="subtitle4"></h5>  
+                                <p class="training-more__text" id="subtitle4-text"></p>        
+                            </div>
+                            <a href="#" class="training-more__sign-up">Записаться</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1821,7 +1951,8 @@
         <script src="js/calendar.js"></script> 
 
         <script src="owl-carousel/owl.carousel.min.js"></script> 
-        <script src="js/jquery.sliderPro.js"></script>     
-
+        <script src="js/jquery.sliderPro.js"></script>  
+        <script src="js/jquery.fancybox.min.js"></script> 
+        <script src="js/modal-window.js"></script> 
     </body>
 </html>

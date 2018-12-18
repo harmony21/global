@@ -16,7 +16,7 @@
             <div class="empty-block"></div>
         </div> 
         <div class="days-training">
-            <div class="day__lesson beginner" data-fancybox data-src="#popup"
+            <div class="day__lesson beginner power" data-fancybox data-src="#popup"
                 data-trainer="Никитин Максим" 
                 data-img-trainer="..//images/trainer-small-pic.png" 
                 data-desc="В фитнес-клубе Global действует поэтапная оплата клубной карты (раз в месяц) 
@@ -34,7 +34,7 @@
                 <div id="day__lesson-hall" class="day__lesson-hall" data-item-hall="Заголовок зала будет написан в 2 стр">Заголовок зала будет написан в 2 стр</div>
                 <div id="day__lesson-level" class="markers-color beginner" data-item-level="Уровень: Для начинающих"></div>
             </div>
-            <div class="day__lesson experience" data-fancybox data-src="#popup">
+            <div class="day__lesson experience aerobic" data-fancybox data-src="#popup">
                 <p class="day__lesson-name" id="day__lesson-name" data-item-title="Заголовок в 1 стр.">Заголовок в 1 стр.</p>
                 <div class="day__lesson-time">
                     <p id="day__lesson-time" data-item-time="с 8:00 - 9:00">c 8:00 - 9:00</p>
@@ -44,7 +44,7 @@
                 <div id="day__lesson-hall" class="day__lesson-hall" data-item-hall="Заголовок зала будет написан в 2 стр">Заголовок зала будет написан в 2 стр</div>
                 <div id="day__lesson-level" class="markers-color experience" data-item-level="Уровень: Для опытных"></div>
             </div>
-            <div class="day__lesson swimming" data-fancybox data-src="#popup">
+            <div class="day__lesson swimming " data-fancybox data-src="#popup">
                 <p class="day__lesson-name" id="day__lesson-name" data-item-title="Заголовок в 1 стр.">Заголовок в 1 стр.</p>
                 <div class="day__lesson-time">
                     <p id="day__lesson-time" data-item-time="с 8:00 - 9:00">c 8:00 - 9:00</p>
@@ -65,7 +65,7 @@
             <div class="empty-block"></div>
         </div>
         <div class="days-training">
-            <div class="day__lesson beginner" data-fancybox data-src="#popup">
+            <div class="day__lesson beginner mixed" data-fancybox data-src="#popup">
                 <p class="day__lesson-name" id="day__lesson-name" data-item-title="Заголовок в 1 стр.">Заголовок в 1 стр.</p>
                 <div class="day__lesson-time">
                     <p id="day__lesson-time" data-item-time="с 8:00 - 9:00">c 8:00 - 9:00</p>
@@ -75,7 +75,7 @@
                 <div id="day__lesson-hall" class="day__lesson-hall" data-item-hall="Заголовок зала будет написан в 2 стр">Заголовок зала будет написан в 2 стр</div>
                 <div id="day__lesson-level" class="markers-color beginner" data-item-level="Уровень: Для начинающих"></div>
             </div>
-            <div class="day__lesson experience" data-fancybox data-src="#popup">
+            <div class="day__lesson experience dance" data-fancybox data-src="#popup">
                 <p class="day__lesson-name" id="day__lesson-name" data-item-title="Заголовок в 1 стр.">Заголовок в 1 стр.</p>
                 <div class="day__lesson-time">
                     <p id="day__lesson-time" data-item-time="с 8:00 - 9:00">c 8:00 - 9:00</p>
@@ -106,7 +106,7 @@
             <div class="empty-block"></div>
         </div>
         <div class="days-training">
-            <div class="day__lesson beginner" data-fancybox data-src="#popup">
+            <div class="day__lesson beginner body-mind" data-fancybox data-src="#popup">
                 <p class="day__lesson-name" id="day__lesson-name" data-item-title="Заголовок в 1 стр.">Заголовок в 1 стр.</p>
                 <div class="day__lesson-time">
                     <p id="day__lesson-time" data-item-time="с 8:00 - 9:00">c 8:00 - 9:00</p>
@@ -116,7 +116,7 @@
                 <div id="day__lesson-hall" class="day__lesson-hall" data-item-hall="Заголовок зала будет написан в 2 стр">Заголовок зала будет написан в 2 стр</div>
                 <div id="day__lesson-level" class="markers-color beginner" data-item-level="Уровень: Для начинающих"></div>
             </div>
-            <div class="day__lesson experience" data-fancybox data-src="#popup">
+            <div class="day__lesson experience author" data-fancybox data-src="#popup">
                 <p class="day__lesson-name" id="day__lesson-name" data-item-title="Заголовок в 1 стр.">Заголовок в 1 стр.</p>
                 <div class="day__lesson-time">
                     <p id="day__lesson-time" data-item-time="с 8:00 - 9:00">c 8:00 - 9:00</p>
@@ -264,9 +264,38 @@
             </div>
         </div>
     </li>
-</ul>       
+</ul>     
+<!-- Модальное окно -->
+<div class="hide-content-lesson" id="popup">
+    <img src="..//images/close-dark.png" alt="" class="hide-content-lesson__close">
+    <p class="hide-content-lesson__level" id="item_level"></p>
+    <p class="hide-content-lesson__title" id="item_title"></p>
+    <div class="hide-content-lesson__time">
+        <p id="item_time"></p>
+        <img src="..//images/clock.png" alt=""> 
+        <span id="item_duration"></span>
+    </div>
+    <div class="hide-content-lesson__hall" id="item_hall"></div>
+    <div class="hide-content-lesson__desc"  id="item_desc"></div>
+    <div class="hide-content-lesson__bottom">
+        <div class="hide-content-lesson__trainer">
+            <div class="hide-content-lesson__trainer-pic">
+                 <img src="" alt="" id="item_pic"> 
+            </div>
+            <div class="hide-content-lesson__trainer-name">
+                Ваш тренер: <a href="" id="item_trainer"></a>
+            </div>
+        </div>
+        <div class="hide-content-lesson__apply">
+            <div class="hide-content-lesson__amount">
+                Стоимость: <span id="item_price"></span>
+            </div>
+            <a href="" class="hide-content-lesson__link">Записаться на тренировку</a>
+        </div>      
+    </div>
+</div>  
 
 <script src="..//js/jquery.bxslider.min.js"></script>
 <script src="..//js/slider.js"></script>
 <script src="..//js/modal-window.js"></script>
-<script src="..//js/filter.js"></script>
+<script src="..//js/isotope.pkgd.min.js"></script>

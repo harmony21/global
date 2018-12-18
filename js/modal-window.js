@@ -25,11 +25,18 @@ $(window).resize(function() {
     
 $(document).ready(function() {
     $(".gallery").fancybox();
+    $(".trainings__item").fancybox();
+    $('.training__item').fancybox();
 });
 
 
 $(document).ready(function() {
   $('.hide-content-lesson__close').on('click', function (e) {
+    e.preventDefault()
+    $.fancybox.close();
+  })
+
+  $('.training-more__close').on('click', function (e) {
     e.preventDefault()
     $.fancybox.close();
   })
@@ -55,5 +62,295 @@ $(document).ready(function() {
         $('#item_trainer').html(item_trainer);
         $('#item_desc').html(item_desc);
         $('#item_price').html(item_price);
+    })
+
+    $('.training__item').click(function(e) {
+        var item_title = $(this).find('.training__link').data('item-title'),
+        item_desc = $(this).data('item-desc'),
+        item_subtitle1 = $(this).data('subtitle1'),
+        item_subtitle2 = $(this).data('subtitle2'),
+        item_subtitle2_desc = $(this).data('subtitle2-desc'),
+        item_subtitle3 = $(this).data('subtitle3'),
+        item_subtitle3_desc = $(this).data('subtitle3-desc'),
+        item_subtitle4 = $(this).data('subtitle4'),
+        item_subtitle4_desc = $(this).data('subtitle4-desc');
+        $('.training-more__title').html(item_title);
+        $('.training-more__text').html(item_desc);
+        $('#subtitle1').html(item_subtitle1);
+        $('#subtitle2').html(item_subtitle2);
+        $('#subtitle2-text').html(item_subtitle2_desc);
+        $('#subtitle3').html(item_subtitle3);
+        $('#subtitle3-text').html(item_subtitle3_desc);
+        $('#subtitle4').html(item_subtitle4);
+        $('#subtitle4-text').html(item_subtitle4_desc);
+
+        var lightSlider = $("#lightSlider").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings').click(function(){
+            lightSlider.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings').click(function(){
+            lightSlider.goToNextSlide(); 
+        });
+    
+    
+        var lightSlider2 = $("#lightSlider2").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-2').click(function(){
+            lightSlider2.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-2').click(function(){
+            lightSlider2.goToNextSlide(); 
+        });
+    
+    
+        var lightSlider3 = $("#lightSlider3").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-3').click(function(){
+            lightSlider3.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-3').click(function(){
+            lightSlider3.goToNextSlide(); 
+        });
+    
+        var lightSlider4 = $("#lightSlider4").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                }, 
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-4').click(function(){
+            lightSlider4.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-4').click(function(){
+            lightSlider4.goToNextSlide(); 
+        });
+
+
+
+        var lightSlider5 = $("#lightSlider5").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-5').click(function(){
+            lightSlider5.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-5').click(function(){
+            lightSlider5.goToNextSlide(); 
+        });
+
+        var lightSlider6 = $("#lightSlider6").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-6').click(function(){
+            lightSlider6.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-6').click(function(){
+            lightSlider6.goToNextSlide(); 
+        });
+
+        var lightSlider7 = $("#lightSlider7").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-7').click(function(){
+            lightSlider7.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-7').click(function(){
+            lightSlider7.goToNextSlide(); 
+        });
+
+
+        var lightSlider8 = $("#lightSlider8").lightSlider({
+            item: 4,
+            responsive : [
+                {
+                    breakpoint:860,
+                    settings: {
+                        item:3,
+                        slideMove:1,
+                      }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        item:2,
+                        slideMove:1
+                      }
+                },
+                {
+                    breakpoint: 440,
+                    settings: {
+                        item:1,
+                        slideMove:1
+                      }
+                }
+            ]
+        }); 
+        $('.left-arrow--trainings-8').click(function(){
+            lightSlider8.goToPrevSlide(); 
+        });
+        $('.right-arrow--trainings-8').click(function(){
+            lightSlider8.goToNextSlide(); 
+        });
     })
 });
