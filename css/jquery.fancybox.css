@@ -177,6 +177,11 @@ body.compensate-for-scrollbar {
     text-align: left;
     vertical-align: middle;
 }
+@media screen and (max-width: 550px) {
+    .fancybox-content {
+        padding: 10px;
+    }
+}
 
 .fancybox-slide--image .fancybox-content {
     animation-timing-function: cubic-bezier(.5, 0, .14, 1);
@@ -435,6 +440,11 @@ body.compensate-for-scrollbar {
     left: 18%;
     padding: 31px 26px 26px 6px;
     background: url('../images/arrow-left-non-active.png');
+}
+@media screen and (max-width: 550px) {
+    .fancybox-navigation .fancybox-button--arrow_left, .fancybox-navigation .fancybox-button--arrow_right  {
+        display: none;
+    }
 }
 
 .fancybox-navigation .fancybox-button--arrow_right {

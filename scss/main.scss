@@ -606,8 +606,7 @@ body {
 .left-arrow {
     background: url('..//images/arrow-left-active.png');
     left: 2%;
-    &--trainings, &--trainings-2, &--trainings-3, &--trainings-4, &--background,
-    &--trainings-5, &--trainings-6, &--trainings-7, &--trainings-8 {
+    &--trainings, &--trainings-2, &--trainings-3, &--trainings-4, &--background {
         width: 32px;
         height: 57px;
         position: absolute;
@@ -615,6 +614,9 @@ body {
         top: 25%;
         left: -45px;
         background: url('..//images/arrow-left-violet.png');
+        &:hover {
+            cursor: pointer;
+        }
         @media screen and (max-width: 550px) {
             display: none;
         }
@@ -623,8 +625,7 @@ body {
 .right-arrow {
     background: url('..//images/arrow-right-active.png');
     right: 2%;
-    &--trainings, &--trainings-2, &--trainings-3, &--trainings-4, &--background,
-    &--trainings-5, &--trainings-6, &--trainings-7, &--trainings-8 {
+    &--trainings, &--trainings-2, &--trainings-3, &--trainings-4, &--background {
         width: 32px;
         height: 57px;
         position: absolute;
@@ -632,6 +633,9 @@ body {
         top: 25%;
         right: -45px;
         background: url('..//images/arrow-right-violet.png');
+        &:hover {
+            cursor: pointer;
+        }
         @media screen and (max-width: 550px) {
             display: none;
         }
@@ -673,6 +677,7 @@ body {
     position: relative;
     @include phones {
         padding-bottom: 20px;
+        z-index: 1;
     }
     @include min-phones {
         padding: 20px 0 10px 0;
@@ -895,6 +900,9 @@ body {
     }
     @media screen and (max-width: 1060px) {
         padding: 70px 20px 60px 20px;
+    }
+    @include phones {
+        z-index: 1;
     }
     @include min-phones {
         padding: 25px 5px;
@@ -1931,17 +1939,24 @@ body {
                 padding-left: 30px;
             }
             @include phones {
-                padding-left: 10px;
+                padding-left: 3px;
+                border: 1px solid #f3f3f3;
             }
         }
         &:last-child {
             border-right: none;
+        }
+        @include phones {
+            border: 1px solid #f3f3f3;
         }
     }
     td {
         height: 60px;
         border: 3px solid #f3f3f3;
         text-align: center;
+        @include phones {
+            border: 1px solid #f3f3f3;
+        }
         &:first-child {
             padding-left: 60px;
             border-left: none;
@@ -1950,7 +1965,8 @@ body {
                 padding-left: 30px;
             }
             @include phones {
-                padding-left: 10px;
+                padding-left: 3px;
+                border: 1px solid #f3f3f3;
             }
         }
         &:last-child {
@@ -2165,8 +2181,11 @@ body {
         margin-top: 10px;
     }
     .training__item {
+        @media screen and (max-width: 350px) {
+            width: 95%;
+            height: 180px;
+        }
         &--first {
-            // width: 24%;
             @include phones {
                 width: 80%;
             }
@@ -2187,7 +2206,6 @@ body {
             }
         }
         &--second {
-            // width: 24%;
             @include phones {
                 width: 80%;
             }
@@ -2208,7 +2226,6 @@ body {
             }
         }
         &--third {
-            // width: 24%;
             display: flex;
             @include phones {
                 width: 80%;
@@ -2230,7 +2247,6 @@ body {
             }
         }
         &--fourth {
-            // width: 24%;
             @include phones {
                 width: 80%;
             }
@@ -2846,6 +2862,7 @@ body {
         flex-direction: column;
         position: relative;
         padding-bottom: 80px;
+        max-width: 221px;
         @include phones {
             padding-bottom: 40px;
         }
@@ -4701,9 +4718,6 @@ body {
                         background-color: #7b398d !important;
                     }
                 }
-            }
-            @media screen and (max-width: 550px) {
-                display: flex;
             }
         }
     }

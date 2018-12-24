@@ -42,6 +42,8 @@ $(document).ready(function() {
 //слайдер новостей
   $(document).ready(function() {
     $('.bxslider7').bxSlider();
+    var outerHeight = $('.news-calendar-item[aria-hidden='+"false"+']').outerHeight();
+    $('.bx-viewport').css('height', outerHeight);
   })
 
   var date = new Date();
@@ -58,10 +60,14 @@ $(document).ready(function() {
 
   $('.calendar-arrow-right.news-arrow').click(function(){
     slider7.goToNextSlide();
+    var outerHeight = $('.news-calendar-item[aria-hidden='+"false"+']').outerHeight();
+    $('.bx-viewport').css('height', outerHeight);
   });
 
   $('.calendar-arrow-left.news-arrow').click(function(){
     slider7.goToPrevSlide();
+    var outerHeight = $('.news-calendar-item[aria-hidden='+"false"+']').outerHeight();
+    $('.bx-viewport').css('height', outerHeight);
   });
 
   //переход от одного слайдера к другому (новости) (страница всех новостей)
@@ -93,7 +99,6 @@ $(document).ready(function() {
   };
 
   var linkID = getUrlParameter('id');
-  console.log(linkID);
   if (linkID !== undefined) {
     var newsItems = $('.news-calendar-item');
     var newsItem = newsItems.index($('.news-calendar-item[id='+linkID+']'));

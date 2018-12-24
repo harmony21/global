@@ -37,10 +37,6 @@ $(document).ready(function() {
     $('.bxslider6').bxSlider();
   })
 
-  $(document).ready(function() {
-    $('.bxslider7').bxSlider();
-  })
-
   var slider = $('.bxslider').bxSlider({
       mode: 'horizontal',
       auto: true,

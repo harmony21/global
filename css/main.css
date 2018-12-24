@@ -565,7 +565,7 @@ body {
 .left-arrow {
   background: url("..//images/arrow-left-active.png");
   left: 2%; }
-  .left-arrow--trainings, .left-arrow--trainings-2, .left-arrow--trainings-3, .left-arrow--trainings-4, .left-arrow--background, .left-arrow--trainings-5, .left-arrow--trainings-6, .left-arrow--trainings-7, .left-arrow--trainings-8 {
+  .left-arrow--trainings, .left-arrow--trainings-2, .left-arrow--trainings-3, .left-arrow--trainings-4, .left-arrow--background {
     width: 32px;
     height: 57px;
     position: absolute;
@@ -573,14 +573,16 @@ body {
     top: 25%;
     left: -45px;
     background: url("..//images/arrow-left-violet.png"); }
+    .left-arrow--trainings:hover, .left-arrow--trainings-2:hover, .left-arrow--trainings-3:hover, .left-arrow--trainings-4:hover, .left-arrow--background:hover {
+      cursor: pointer; }
     @media screen and (max-width: 550px) {
-      .left-arrow--trainings, .left-arrow--trainings-2, .left-arrow--trainings-3, .left-arrow--trainings-4, .left-arrow--background, .left-arrow--trainings-5, .left-arrow--trainings-6, .left-arrow--trainings-7, .left-arrow--trainings-8 {
+      .left-arrow--trainings, .left-arrow--trainings-2, .left-arrow--trainings-3, .left-arrow--trainings-4, .left-arrow--background {
         display: none; } }
 
 .right-arrow {
   background: url("..//images/arrow-right-active.png");
   right: 2%; }
-  .right-arrow--trainings, .right-arrow--trainings-2, .right-arrow--trainings-3, .right-arrow--trainings-4, .right-arrow--background, .right-arrow--trainings-5, .right-arrow--trainings-6, .right-arrow--trainings-7, .right-arrow--trainings-8 {
+  .right-arrow--trainings, .right-arrow--trainings-2, .right-arrow--trainings-3, .right-arrow--trainings-4, .right-arrow--background {
     width: 32px;
     height: 57px;
     position: absolute;
@@ -588,8 +590,10 @@ body {
     top: 25%;
     right: -45px;
     background: url("..//images/arrow-right-violet.png"); }
+    .right-arrow--trainings:hover, .right-arrow--trainings-2:hover, .right-arrow--trainings-3:hover, .right-arrow--trainings-4:hover, .right-arrow--background:hover {
+      cursor: pointer; }
     @media screen and (max-width: 550px) {
-      .right-arrow--trainings, .right-arrow--trainings-2, .right-arrow--trainings-3, .right-arrow--trainings-4, .right-arrow--background, .right-arrow--trainings-5, .right-arrow--trainings-6, .right-arrow--trainings-7, .right-arrow--trainings-8 {
+      .right-arrow--trainings, .right-arrow--trainings-2, .right-arrow--trainings-3, .right-arrow--trainings-4, .right-arrow--background {
         display: none; } }
 
 /* Знакомство с Global */
@@ -625,7 +629,8 @@ body {
   position: relative; }
   @media screen and (max-width: 550px) {
     .training {
-      padding-bottom: 20px; } }
+      padding-bottom: 20px;
+      z-index: 1; } }
   @media screen and (max-width: 350px) {
     .training {
       padding: 20px 0 10px 0; } }
@@ -863,6 +868,9 @@ body {
   @media screen and (max-width: 1060px) {
     .calendar {
       padding: 70px 20px 60px 20px; } }
+  @media screen and (max-width: 550px) {
+    .calendar {
+      z-index: 1; } }
   @media screen and (max-width: 350px) {
     .calendar {
       padding: 25px 5px; } }
@@ -1869,13 +1877,20 @@ body {
           padding-left: 30px; } }
       @media screen and (max-width: 550px) {
         .cards-hidden th:first-child {
-          padding-left: 10px; } }
+          padding-left: 3px;
+          border: 1px solid #f3f3f3; } }
     .cards-hidden th:last-child {
       border-right: none; }
+    @media screen and (max-width: 550px) {
+      .cards-hidden th {
+        border: 1px solid #f3f3f3; } }
   .cards-hidden td {
     height: 60px;
     border: 3px solid #f3f3f3;
     text-align: center; }
+    @media screen and (max-width: 550px) {
+      .cards-hidden td {
+        border: 1px solid #f3f3f3; } }
     .cards-hidden td:first-child {
       padding-left: 60px;
       border-left: none;
@@ -1885,7 +1900,8 @@ body {
           padding-left: 30px; } }
       @media screen and (max-width: 550px) {
         .cards-hidden td:first-child {
-          padding-left: 10px; } }
+          padding-left: 3px;
+          border: 1px solid #f3f3f3; } }
     .cards-hidden td:last-child {
       border-right: none; }
     .cards-hidden td.td-special {
@@ -2106,6 +2122,11 @@ body {
 
 .about .secondline {
   margin-top: 10px; }
+
+@media screen and (max-width: 350px) {
+  .about .training__item {
+    width: 95%;
+    height: 180px; } }
 
 @media screen and (max-width: 550px) {
   .about .training__item--first {
@@ -2809,7 +2830,8 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     position: relative;
-    padding-bottom: 80px; }
+    padding-bottom: 80px;
+    max-width: 221px; }
     @media screen and (max-width: 550px) {
       .team__item {
         padding-bottom: 40px; } }
@@ -4622,8 +4644,3 @@ body {
       display: none; }
       .training-more__slider .lSSlideOuter .lSPager li.active a {
         background-color: #7b398d !important; }
-      @media screen and (max-width: 550px) {
-        .training-more__slider .lSSlideOuter .lSPager {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex; } }
