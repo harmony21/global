@@ -177,11 +177,6 @@ body.compensate-for-scrollbar {
     text-align: left;
     vertical-align: middle;
 }
-@media screen and (max-width: 550px) {
-    .fancybox-content {
-        padding: 10px;
-    }
-}
 
 .fancybox-slide--image .fancybox-content {
     animation-timing-function: cubic-bezier(.5, 0, .14, 1);

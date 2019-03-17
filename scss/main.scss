@@ -81,8 +81,8 @@ body {
     @include phones {
         height: 420px;
     }
-    @include min-phones {
-        height: 240px;
+    @media screen and (max-width: 350px) {
+        height: 270px;
     }
 }
 .header {
@@ -212,6 +212,9 @@ body {
         align-items: center;
         justify-content: space-between;
         margin-top: 30px;
+        @include phones {
+            margin-top: 5px;
+        }
         @include min-phones {
             margin-top: 20px;
         }
@@ -393,6 +396,7 @@ body {
     top: 0;
     @include phones {
         overflow: hidden;
+        height: 450px;
     }
     @include min-phones {
         height: 300px;
@@ -678,9 +682,7 @@ body {
     @include phones {
         padding-bottom: 20px;
         z-index: 1;
-    }
-    @include min-phones {
-        padding: 20px 0 10px 0;
+        padding: 0 0 10px 0;
     }
     &__top {
         display: flex;
@@ -728,16 +730,66 @@ body {
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
+        width: 100%;
         @include phones {
             margin-top: 0;
             padding: 0 5px;
+        }
+        // .owl-wrapper {
+        //     @include phones {
+        //         height: 280px;
+        //     }
+        // }
+        // .owl-pagination {
+        //     display: flex;
+        //     justify-content: center;
+        // }
+        // .owl-item {
+        //     @include phones {
+        //         width: 188px !important;
+        //     }
+        // }
+        // .owl-page {
+        //     @include phones {
+        //         width: 12px;
+        //         height: 12px;
+        //         margin-right: 8px;
+        //         border-radius: 50%;
+        //         background-color: #7b398d;
+        //         border: 2px solid #7b398d;
+        //         &:hover, &.active {
+        //             background-color: #fff;
+        //         }
+        //     }
+        // }
+    }
+    .owl-carousel {
+        box-sizing: border-box;
+        .owl-dots {
+            display: flex;
+            justify-content: center;
+        }
+        .owl-dot {
+            @include phones {
+                width: 12px;
+                height: 12px;
+                margin-right: 8px;
+                border-radius: 50%;
+                background-color: #7b398d;
+                border: 2px solid #7b398d;
+                &:hover, &.active {
+                    background-color: #fff;
+                }
+            }
+        }
+        .owl-item img {
+            width: auto;
         }
     }
     &__link {
         text-transform: uppercase;
         padding-bottom: 40px;
         padding-left: 35px;
-        width: 260px;
         height: 100%;
         display: flex;
         justify-content: flex-end;
@@ -751,38 +803,32 @@ body {
         @include laptop {
             padding-bottom: 15px;
             padding-left: 15px;
-            width: 284px;
-        }
-        @media screen and (max-width: 1220px) {
-            width: 220px;
         }
         @include tablets {
             padding-left: 5px;
-            width: 190px;
-        }
-        @media screen and (max-width: 610px) {
-            width: 150px;
         }
         @include phones {
             font-family: Circe-Bold;
             position: absolute;
-            margin-top: 25px;
-        }
-        @include min-phones {
-            margin-top: 45px;
+            margin-top: 0;
+            color: #2d0b37;
+            width: 85%;
+            padding-bottom: 5px;
         }
     }
     .container {
         overflow: hidden;
     }
     &__item {
-        width: 472px;
         height: 299px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end; 
         transition: 0.3s ease-in-out;
         position: relative;
+        @include phones {
+            height: 165px;
+        }
         &:hover {
             @media screen and (min-width: 1030px) {
                 transform: scale(1.05);
@@ -791,53 +837,23 @@ body {
                 }
             }
         }
-        @include laptop {
-            width: 330px;
-        } 
-        @include tablets {
-            height: 200px;
-            width: 250px;
-        }
-        @include phones {
-            width: 220px;
-            height: 170px;
-            margin: 0 5px;
-        }
-        @include min-phones {
-            width: 140px;
-            height: 88px;
-        }
         hr {
             border: 2px solid white;
             width: 80px;
             margin-left: 0;
             transition: 0.3s ease-in-out;
+            @include phones {
+                border: 2px solid #2d0b37;
+            }
         }
     }
     &__img {
         position: absolute;
         top: 0;
-        width: 100%;
         left: 0;
         height: 100%;
-    }
-    .owl-item {
-        width: 472px;
-        @include laptop {
-            width: 330px !important;
-        }
-        @include tablets {
-            height: 200px;
-            width: 250px !important;
-        }
         @include phones {
-            width: 220px !important;
-            height: 170px;
-            margin: 0 5px;
-        }
-        @include min-phones {
-            width: 140px !important;
-            height: 88px;
+            height: 75%;
         }
     }
 }
@@ -846,14 +862,6 @@ body {
         hr {
             @include min-phones {
                 top:80px;
-            }
-        }
-        &__link {
-            @include phones {
-                top: 140px;
-            }
-            @include min-phones {
-                top: 60px;
             }
         }
     }
@@ -903,6 +911,7 @@ body {
     }
     @include phones {
         z-index: 1;
+        padding: 25px 20px 60px 20px;
     }
     @include min-phones {
         padding: 25px 5px;
@@ -919,6 +928,16 @@ body {
         .block-title {
             @include min-phones {
                 width: 190px;
+            }
+        }
+    }
+    .block-title {
+        &--month {
+            @include phones {
+                position: absolute;
+                top: 0;
+                width: 90vw;
+                text-align: center;
             }
         }
     }
@@ -945,6 +964,7 @@ body {
         margin-top: 25px;
         @include phones {
             justify-content: center;
+            margin-top: 40px;
         }
         .calendar-arrow-left, .calendar-arrow-right {
             width: 32px;
@@ -956,9 +976,17 @@ body {
         }
         .calendar-arrow-left {
             background: url('..//images/arrow-left-non-active.png');
+            @include phones {
+                position: absolute;
+                left: 50px;
+            }
         }
         .calendar-arrow-right {
             background: url('..//images/arrow-right-non-active.png');
+            @include phones {
+                position: absolute;
+                right: 50px;
+            }
         }
         .calendar-arrow-right {
             @include phones {
@@ -1033,6 +1061,7 @@ body {
             }
             @include phones {
                 margin-left: 20px;
+                text-transform: none;
             }
             @include min-phones {
                 margin-top: 5px;
@@ -1051,6 +1080,9 @@ body {
             @media screen and (max-width:750px) {
                 text-align: center;
             }
+            @include phones {
+                text-align: left;
+            }
             @include min-phones {
                 margin-bottom: 0;
             }
@@ -1065,6 +1097,9 @@ body {
 .calendar {
     h3 {
         margin-top: 15px;
+        @include phones {
+            margin-top: 0;
+        }
     }
     .tabs {
         margin-top: 20px;
@@ -1483,9 +1518,6 @@ body {
         left: 0;
         margin-left: 0;
     }
-    @include phones {
-        position: absolute;
-    }
     .block-title {
         padding-left: 110px;
         padding-bottom: 40px;
@@ -1528,11 +1560,8 @@ body {
         @include phones {
             line-height: 2;
             padding-left: 0;
-            width: 50%;
+            width: 73%;
             margin: 20px auto 0 auto;
-            @media screen and (max-width: 360px) {
-                width: 70%;
-            }
         }
     }
     &__checkbox {
@@ -1840,7 +1869,7 @@ body {
         @media screen and (-ms-high-contrast: active) and (-ms-high-contrast: none) {
             height: 264px;
             @media screen and (max-width: 1000px) {
-               height: 100px;
+                height: 100px;
             }
             @include min-tablets {
                height: 100%;
@@ -1913,7 +1942,7 @@ body {
     margin-top: 5px;
 }
 .cards-more__content1, .cards-more__content2, 
-.cards-more__content3, .cards-more__content4,   {
+.cards-more__content3, .cards-more__content4  {
     display: none;
 }
 .cards-more__list {
@@ -2162,6 +2191,10 @@ body {
     }
     .container {
         overflow: hidden;
+        width: calc(100%/4);
+        @media screen and (max-width: 700px) {
+            width: 100%;
+        }
         @include phones {
             width: 300px;
         }
@@ -2181,99 +2214,10 @@ body {
         margin-top: 10px;
     }
     .training__item {
+        // width: calc(100%/4);
         @media screen and (max-width: 350px) {
             width: 95%;
             height: 180px;
-        }
-        &--first {
-            @include phones {
-                width: 80%;
-            }
-            @include min-phones {
-                height: 150px;
-            }
-            &.pic-about {
-                background: url('..//images/train5.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-            &.pic-about2 {
-                background: url('..//images/train9.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-        }
-        &--second {
-            @include phones {
-                width: 80%;
-            }
-            @include min-phones {
-                height: 150px;
-            }
-            &.pic-about {
-                background: url('..//images/train6.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-            &.pic-about2 {
-                background: url('..//images/train10.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-        }
-        &--third {
-            display: flex;
-            @include phones {
-                width: 80%;
-            }
-            @include min-phones {
-                height: 150px;
-            }
-            &.pic-about {
-                background: url('..//images/train7.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-            &.pic-about2 {
-                background: url('..//images/train11.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-        }
-        &--fourth {
-            @include phones {
-                width: 80%;
-            }
-            @include min-phones {
-                height: 150px;
-            }
-            &.pic-about {
-                background: url('..//images/train8.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-            &.pic-about2 {
-                background: url('..//images/train12.png') center center no-repeat;
-                @include min-phones {
-                    background-size: contain;
-                }
-            }
-        }
-        &--first, &--second,
-        &--third, &--fourth {
-            @media screen and (max-width: 700px) {
-                margin-top: 10px;
-            }
-            @include phones {
-                margin-top: 50px;
-            }
         }
     }
     .training__link {
@@ -2670,7 +2614,7 @@ body {
     }
     &__item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         list-style: none;
         background: url('..//images/phone-icon.png') no-repeat 0 0px;
         padding-left: 40px;
@@ -2716,26 +2660,32 @@ body {
         margin-top: 20px;
         @include phones {
             margin-top: 0px;
+            flex-direction: column;
         }
         input {
             width: 47%;
             padding: 5px 0 5px 8px;
             border: 1px solid #2d0b37;
             border-radius: 3px;
-            @include min-phones {
-                margin-right: 3px;
-                &:last-child {
-                    margin-right: 0;
-                }
+            @include phones {
+                width: 100%;
+                box-sizing: border-box;
             }
+            // @include min-phones {
+            //     margin-right: 3px;
+            //     &:last-child {
+            //         margin-right: 0;
+            //     }
+            // }
         }
     }
     input, textarea {
-        width: 98.5%;
+        width: 100%;
         margin-top: 25px;
         padding: 5px 0 5px 8px;
         border: 1px solid #2d0b37;
         border-radius: 3px;
+        box-sizing: border-box;
     }
     textarea {
         height: 122px;
@@ -2769,8 +2719,8 @@ body {
         }
         .label {
             margin-left: 10px;
-            @include min-phones {
-                width: 200px;
+            @include phones {
+                width: 80%;
             }
         }
     }
@@ -2862,9 +2812,17 @@ body {
         flex-direction: column;
         position: relative;
         padding-bottom: 80px;
-        max-width: 221px;
+        max-width: 241px;
+        box-sizing: border-box;
         @include phones {
             padding-bottom: 40px;
+            width: 50%;
+            margin-right: 0;
+            padding: 2px;
+        }
+        @media screen and (max-width: 400px) {
+            width: 100%;
+            padding: 10px;
         }
         &:hover {
             box-shadow: 0 0 10px rgba(180,180,180,0.5);
@@ -2949,11 +2907,12 @@ body {
                 margin-top: 10px;
             }
             @include phones {
-                width: 50%;
+                width: 100%;
                 border: 1px solid #2d0b37;
                 border-radius: 5px;
                 text-align: center;
                 margin-right: 5px;
+                box-sizing: border-box;
             }
             &:hover {
                 border: 1px solid #2d0b37;
@@ -3011,6 +2970,9 @@ body {
     max-width: 80% !important;
     @include tablets {
         max-width: 100% !important;
+    }
+    @include phones {
+        padding: 10px !important;
     }
 }
 .fancybox-slide {
@@ -3367,11 +3329,11 @@ body {
     .bx-controls-direction, .bx-pager {
         display: none;
     }
-    .bx-viewport {
-        @include phones {
-            height: 100% !important;
-        }
-    }
+    // .bx-viewport {
+    //     @include phones {
+    //         height: 100% !important;
+    //     }
+    // }
 }
 //Новости подробно
 .news-more {
@@ -3617,6 +3579,7 @@ body {
     @include phones {
         display: flex;
         align-items: flex-start;
+        margin-top: 10px;
     }
     img {
         display: none;
@@ -3984,6 +3947,7 @@ body {
             }
             @include phones {
                 width: 310px;
+                order: 1;
             }
             @media screen and (max-width: 370px) {
                 width: 89%;
@@ -4496,6 +4460,9 @@ body {
                     margin-left: 2px;
                 }
             }
+        }
+        &-pic {
+            width: 80px;
         }
     }
     &__apply {

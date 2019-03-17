@@ -37,6 +37,10 @@ $(document).ready(function() {
     $('.bxslider6').bxSlider();
   })
 
+  $(document).ready(function() {
+    $('.bxslider7').bxSlider();
+  })
+
   var slider = $('.bxslider').bxSlider({
       mode: 'horizontal',
       auto: true,
@@ -65,7 +69,8 @@ $(document).ready(function() {
   });
 
   var slider6 = $('.bxslider6').bxSlider({
-      mode: 'horizontal'
+      mode: 'horizontal',
+      adaptiveHeight: true
   });
 
   $('.day__arrows_right').click(function(){
@@ -77,31 +82,31 @@ $(document).ready(function() {
   });
 
 
-
-
   
  
-  var carousel = $("#carousel");
+  var carousel = $(".owl-carousel");
   carousel.owlCarousel({
     loop: true,
+    dots: true,
     responsive: { 
       0: {
-          items:1
+          items: 2,
+          margin: 5
       },
-      550: {
-          items:2
+      768: {
+        items: 3
       },
       1030: {
-          items:4
+          items: 4
       }
     }
   });
   $('#js-prev').click(function () {
-    carousel.trigger('owl.prev');
+    carousel.trigger('prev.owl.carousel');
     return false;
   });
   $('#js-next').click(function () {
-    carousel.trigger('owl.next');
+    carousel.trigger('next.owl.carousel');
     return false;
   });
 
@@ -112,14 +117,19 @@ $(document).ready(function() {
   currentDate = currentMonth+''+currentYear;
 
   var calendarItems = $('.calendar-item');
-  var currentItem = calendarItems.index($('.calendar-item[id='+currentDate+']'));
+  var currentItem = calendarItems.index($('.calendar-item[id='+currentDate+']'));  
+
+  if ($(window).width() <= 551) {
+    currentDate = currentYear + ', ' + currentMonth + ', ' + date.getDate();
+    currentItem = calendarItems.index($('.calendar-item[data-date='+ "'" +currentDate+ "'" +']'));
+  }
 
   var slideNow = 1,
   slideCount = $('.listslider').children().length,
-  translateWidth = 0,
-  slideInterval = 2000;
+  translateWidth = 0;
 
   if (currentItem != -1) {
+
     translateWidth = -$('#slider').width()*(currentItem);
     $('.listslider').css({
       'transform':'translate('+translateWidth + 'px, 0)',
@@ -128,17 +138,54 @@ $(document).ready(function() {
     });
     slideNow = currentItem + 1;
     translateWidth = 0;
+
   }
   else {
-    currentItem = $(calendarItems[calendarItems.length-1]).index();
-    translateWidth = -$('#slider').width()*(currentItem);
-    $('.listslider').css({
-      'transform':'translate('+translateWidth + 'px, 0)',
-      '-webkit-transform':'translate('+translateWidth + 'px, 0)',
-      '-ms-transform':'translate('+translateWidth + 'px, 0)',
-    });
-    slideNow = currentItem + 1;
-    translateWidth = 0;
+
+    if ($(window).width() <= 551) {
+      var currentItems = [];
+      for (var i = 0; i < slideCount; i++) {
+        currentItems.push($(calendarItems[i]).data('date'));
+      }
+
+      var numCurrentItems = [];
+      for (var i = 0; i < slideCount; i++) {
+        numCurrentItems.push(new Date(currentItems[i]));
+      }
+
+      var numCurrentItem;
+      for (var i = 0; i < slideCount; i++) {
+        if (date < numCurrentItems[i]) {
+          numCurrentItem = numCurrentItems[i];
+          break;
+        }
+      }
+
+      currentMonth = numCurrentItem.getMonth() + 1;
+      currentDate = numCurrentItem.getFullYear() + ', ' + currentMonth + ', ' + numCurrentItem.getDate();
+     
+      currentItem = calendarItems.index($('.calendar-item[data-date='+ "'" +currentDate+ "'" +']'));  
+      translateWidth = -$('#slider').width()*(currentItem);
+      $('.listslider').css({
+        'transform':'translate('+translateWidth + 'px, 0)',
+        '-webkit-transform':'translate('+translateWidth + 'px, 0)',
+        '-ms-transform':'translate('+translateWidth + 'px, 0)',
+      });
+      slideNow = currentItem + 1;
+      translateWidth = 0;
+    } 
+
+    else {
+      currentItem = $(calendarItems[calendarItems.length-1]).index();
+      translateWidth = -$('#slider').width()*(currentItem);
+      $('.listslider').css({
+        'transform':'translate('+translateWidth + 'px, 0)',
+        '-webkit-transform':'translate('+translateWidth + 'px, 0)',
+        '-ms-transform':'translate('+translateWidth + 'px, 0)',
+      });
+      slideNow = currentItem + 1;
+      translateWidth = 0;
+    }
   }
 
   function nextSlide() {

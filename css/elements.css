@@ -141,6 +141,9 @@ a {
   @media screen and (max-width: 610px) {
     .training__link {
       font-size: 10px; } }
+  @media screen and (max-width: 400px) {
+    .training__link {
+      font-size: 8px; } }
 
 .link {
   font-size: 20px;

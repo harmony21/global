@@ -195,6 +195,9 @@ a {
         @media screen and (max-width: 610px) {
             font-size: 10px;
         }
+        @media screen and (max-width: 400px) {
+            font-size: 8px;
+        }
     }
 }
 .link {

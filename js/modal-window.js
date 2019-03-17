@@ -24,7 +24,9 @@ $(window).resize(function() {
 
     
 $(document).ready(function() {
-    $(".gallery").fancybox();
+    $(".gallery").fancybox({
+        loop: true
+    });
     $(".trainings__item").fancybox();
     $('.training__item').fancybox();
 });

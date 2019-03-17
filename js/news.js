@@ -42,8 +42,6 @@ $(document).ready(function() {
 //слайдер новостей
   $(document).ready(function() {
     $('.bxslider7').bxSlider();
-    var outerHeight = $('.news-calendar-item[aria-hidden='+"false"+']').outerHeight();
-    $('.bx-viewport').css('height', outerHeight);
   })
 
   var date = new Date();
@@ -55,7 +53,8 @@ $(document).ready(function() {
 
   var slider7 = $('.bxslider7').bxSlider({
       mode: 'horizontal',
-      startSlide: currentItem
+      startSlide: currentItem,
+      adaptiveHeight: true
   });
 
   $('.calendar-arrow-right.news-arrow').click(function(){
